@@ -1,9 +1,11 @@
 import "./App.css";
+import { Navbar } from "./components";
 
 function App() {
   return (
-    <div className="App">
-      <h2 className="bg-red-300  text-3xl font-bold underline ">music app react</h2>
+    <div className="App h-screen w-full bg-orange-400">
+      <Navbar />
+      <h2 className=" text-3xl font-bold ">music app react</h2>
     </div>
   );
 }
