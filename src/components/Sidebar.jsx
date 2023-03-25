@@ -30,7 +30,7 @@ export default function Sidebar() {
     setDarkMode(!darkMode);
   };
   return (
-    <div className="flex h-full w-max flex-col  items-center justify-start gap-4 bg-gray-500 py-2  px-4 pr-7 dark:bg-blue-900">
+    <div className="flex h-full w-full  flex-col  items-center justify-start gap-4 bg-gray-500 py-2  px-4 pr-7 dark:bg-blue-900">
       <h2 className="cursor-pointer  py-3 px-2 font-sans text-base font-bold text-gray-900 dark:text-stone-300">Music App</h2>
 
       <ul className="flex w-full cursor-pointer  flex-col items-start gap-3  ">

@@ -10,7 +10,7 @@ export default function Discover() {
   if (error) return <Error />;
 
   return (
-    <div className="hide-scrollbar overflow-y-scroll bg-white dark:bg-cyan-600">
+    <div className="hide-scrollbar h-full w-full overflow-y-scroll bg-white dark:bg-cyan-600">
       <div className="flex flex-wrap justify-center gap-8 p-3 ">
         {data?.tracks.map((song, i) => (
           <SongCard key={song.key} i={i} song={song} data={data} />
