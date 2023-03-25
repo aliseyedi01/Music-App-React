@@ -1,4 +1,4 @@
-import { Loading, SongCard } from "../components";
+import { Loading, SongCard, Error } from "../components";
 
 import { useGetSongTrackQuery } from "../redux/services/shazam";
 
@@ -7,6 +7,7 @@ export default function Discover() {
   //   console.log(data);
 
   if (isFetching) return <Loading />;
+  if (error) return <Error />;
 
   return (
     <div className="overflow-y-scroll bg-white dark:bg-cyan-600">
