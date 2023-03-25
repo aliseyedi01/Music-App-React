@@ -15,10 +15,7 @@ export default function Controls({
   isPlaying,
   repeat,
   value,
-  volume,
   onChange,
-  min,
-  max,
   setVolume,
   setRepeat,
   shuffle,
@@ -31,23 +28,51 @@ export default function Controls({
   // console.log(value);
   return (
     <div className="my-3 flex w-full flex-col  items-center justify-center gap-5">
-      <div className="flex w-full  items-center justify-between gap-2 px-2 text-xl  text-yellow-400 dark:text-white">
-        <BsArrowRepeat className="cursor-pointer  " />
-        <BsFillSkipStartFill className="cursor-pointer " />
+      {/* above btn */}
+
+      <div className="flex w-full items-center justify-between gap-2 px-2 text-xl  text-yellow-400 dark:text-white">
+        <BsArrowRepeat
+          className={`cursor-pointer ${
+            repeat ? "text-orange-600" : "text-white"
+          }`}
+          onClick={() => setRepeat((prev) => !prev)}
+        />
+        <BsFillSkipStartFill
+          className="cursor-pointer "
+          onClick={handlePrevSong}
+        />
+        {/* play and pause */}
         {isPlaying ? (
-          <BsFillPauseFill className="cursor-pointer " onClick={handlePlayPause} />
+          <BsFillPauseFill
+            className="cursor-pointer "
+            onClick={handlePlayPause}
+          />
         ) : (
-          <BsFillPlayFill className="cursor-pointer " onClick={handlePlayPause} />
+          <BsFillPlayFill
+            className="cursor-pointer "
+            onClick={handlePlayPause}
+          />
         )}
-        <BsFillSkipEndFill className="cursor-pointer " />
-        <BsShuffle className="cursor-pointer " />
+        <BsFillSkipEndFill
+          className="cursor-pointer "
+          onClick={handleNextSong}
+        />
+        <BsShuffle
+          className={`cursor-pointer ${
+            shuffle ? "text-orange-600" : "text-white"
+          }`}
+          onClick={() => setShuffle((prev) => !prev)}
+        />
       </div>
-      {/* bottom */}
+
+      {/* down btn */}
+
       <div className="flex w-full items-center justify-around  px-4 py-2   ">
         <div className="flex items-center gap-3">
           <BsListUl className=" cursor-pointer  text-xl text-yellow-400 dark:text-white" />
           <BsMusicPlayerFill className="cursor-pointer text-xl text-yellow-400 dark:text-white" />
         </div>
+
         <VolumeBar
           value={value}
           min="0"
