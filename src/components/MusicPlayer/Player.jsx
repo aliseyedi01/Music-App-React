@@ -1,10 +1,42 @@
 import React from "react";
+import { useRef, useEffect } from "react";
+export default function Player({
+  activeSong,
+  isPlaying,
+  volume,
+  seekTime,
+  onEnded,
+  onTimeUpdate,
+  onLoadedData,
+  repeat,
+}) {
+  const ref = useRef(null);
 
-export default function Player() {
+  if (ref.current) {
+    if (isPlaying) {
+      ref.current.play();
+    } else {
+      ref.current.pause();
+    }
+  }
+
+  useEffect(() => {
+    ref.current.volume = volume;
+  }, [volume]);
+  useEffect(() => {
+    ref.current.currentTime = seekTime;
+  }, [seekTime]);
+
+  console.log(ref);
+
   return (
     <audio
-      src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/50/8b/c5/508bc557-59fa-a253-7851-1331a1c22919/mzaf_15096630971456339960.plus.aac.ep.m4a
-    "
+      ref={ref}
+      src={activeSong?.hub?.actions[1]?.uri}
+      loop={repeat}
+      onEnded={onEnded}
+      onTimeUpdate={onTimeUpdate}
+      onLoadedData={onLoadedData}
     />
   );
 }
