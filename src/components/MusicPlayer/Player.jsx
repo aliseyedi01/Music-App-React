@@ -27,7 +27,7 @@ export default function Player({
     ref.current.currentTime = seekTime;
   }, [seekTime]);
 
-  console.log(ref);
+  // console.log(ref);
 
   return (
     <audio

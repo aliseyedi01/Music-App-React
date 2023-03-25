@@ -4,8 +4,9 @@ import { Track, Controls, Seekbar, Player } from "../MusicPlayer";
 import { nextSong, prevSong, playPause } from "../../redux/feature/playerSlice";
 
 export default function MusicPlayer() {
-  const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
-    useSelector((state) => state.player);
+  const { activeSong, currentSongs, currentIndex, isActive, isPlaying } = useSelector(
+    (state) => state.player
+  );
 
   const [duration, setDuration] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
@@ -48,7 +49,7 @@ export default function MusicPlayer() {
       dispatch(prevSong(currentIndex - 1));
     }
   };
-
+  // console.log(volume);
   return (
     <div className="mx-auto  flex w-72 flex-col items-center justify-center  ">
       <Track activeSong={activeSong} />
@@ -82,7 +83,9 @@ export default function MusicPlayer() {
         handlePlayPause={handlePlayPause}
         handlePrevSong={handlePrevSong}
         handleNextSong={handleNextSong}
+        onChange={(event) => setVolume(event.target.value)}
         setVolume={setVolume}
+        value={volume}
       />
     </div>
   );

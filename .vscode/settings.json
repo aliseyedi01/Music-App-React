@@ -1,3 +1,11 @@
 {
-  "cSpell.ignoreWords": ["Seekbar", "coverart", "coverarthq", "reduxjs", "shazam", "tailwindcss"]
+  "cSpell.ignoreWords": [
+    "Seekbar",
+    "coverart",
+    "coverarthq",
+    "ganre",
+    "reduxjs",
+    "shazam",
+    "tailwindcss"
+  ]
 }
