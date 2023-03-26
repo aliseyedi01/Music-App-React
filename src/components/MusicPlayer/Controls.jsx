@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   BsArrowRepeat,
   BsFillSkipEndFill,
@@ -5,8 +6,9 @@ import {
   BsFillPlayFill,
   BsFillSkipStartFill,
   BsShuffle,
+  BsHeart,
+  BsFillHeartFill,
   BsListUl,
-  BsMusicPlayerFill,
 } from "react-icons/bs";
 
 import VolumeBar from "./VolumeBar";
@@ -27,6 +29,12 @@ export default function Controls({
   handleNextSong,
 }) {
   // console.log(activeSong);
+  const [showFavorites, setShowFavorites] = useState(true);
+
+  const handleFavorites = () => {
+    setShowFavorites(!showFavorites);
+  };
+
   return (
     <div className="my-3 flex w-full flex-col  items-center justify-center gap-5">
       {/* above btn */}
@@ -70,8 +78,17 @@ export default function Controls({
 
       <div className="flex w-full items-center justify-around  px-4 py-2   ">
         <div className="flex items-center gap-3">
-          <BsListUl className=" cursor-pointer  text-xl text-yellow-400 dark:text-white" />
-          <BsMusicPlayerFill className="cursor-pointer text-xl text-yellow-400 dark:text-white" />
+          {showFavorites ? (
+            <BsFillHeartFill
+              className="cursor-pointer text-xl text-yellow-400 dark:text-white"
+              onClick={handleFavorites}
+            />
+          ) : (
+            <BsHeart
+              className="cursor-pointer text-xl text-yellow-400 dark:text-white"
+              onClick={handleFavorites}
+            />
+          )}
         </div>
 
         <VolumeBar
