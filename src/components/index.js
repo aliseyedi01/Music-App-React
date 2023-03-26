@@ -4,5 +4,15 @@ import SongCard from "./SongCard";
 import Error from "./Error";
 import MusicPlayer from "./MusicPlayer/MusicPlayer";
 import SongDetails from "./SongDetails";
-
-export { Sidebar, SongCard, Loading, Error, MusicPlayer, SongDetails };
+import RelatedSong from "./RelatedSong";
+import SongBar from "./SongBar";
+export {
+  Sidebar,
+  SongCard,
+  Loading,
+  Error,
+  MusicPlayer,
+  SongDetails,
+  RelatedSong,
+  SongBar,
+};

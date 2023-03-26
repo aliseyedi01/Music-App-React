@@ -16,7 +16,7 @@ export default function MusicPlayer() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (currentSongs.length) dispatch(playPause(true));
+    if (currentSongs?.length) dispatch(playPause(true));
   }, [currentIndex]);
 
   const handlePlayPause = () => {

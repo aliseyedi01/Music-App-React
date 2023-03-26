@@ -18,9 +18,17 @@ export const shazamApi = createApi({
       query: () => "charts/track",
     }),
     getSongDetails: builder.query({
-      query: ({ songid }) => `/songs/get-details?key=${songid}`,
+      query: ({ songid }) => `songs/get-details?key=${songid}`,
+    }),
+    getSongRelated: builder.query({
+      // query: ({ songid }) => `songs/list-recommendations?key=${songid}`,
+      query: () => "songs/list-recommendations?key=484129036&locale=en-US",
     }),
   }),
 });
 
-export const { useGetSongTrackQuery, useGetSongDetailsQuery } = shazamApi;
+export const {
+  useGetSongTrackQuery,
+  useGetSongDetailsQuery,
+  useGetSongRelatedQuery,
+} = shazamApi;
