@@ -14,7 +14,7 @@ export default function SongCard({ song, i, data, isPlaying, activeSong }) {
   const handlePauseClick = () => {
     dispatch(playPause(false));
   };
-  console.log(isPlaying);
+
   return (
     <div className="flex h-full w-[200px] cursor-pointer flex-col rounded-lg bg-white bg-opacity-80 p-3 shadow-2xl  backdrop-blur-sm dark:bg-blue-700">
       <div className="group relative  w-full">

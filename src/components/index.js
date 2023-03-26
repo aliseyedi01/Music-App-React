@@ -1,7 +1,8 @@
-import Navbar from "./Sidebar";
+import Sidebar from "./Sidebar";
 import Loading from "./Loading";
 import SongCard from "./SongCard";
 import Error from "./Error";
 import MusicPlayer from "./MusicPlayer/MusicPlayer";
+import SongDetails from "./SongDetails";
 
-export { Navbar, SongCard, Loading, Error, MusicPlayer };
+export { Sidebar, SongCard, Loading, Error, MusicPlayer, SongDetails };

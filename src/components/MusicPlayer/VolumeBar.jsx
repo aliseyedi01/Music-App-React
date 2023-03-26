@@ -1,6 +1,10 @@
-import { BsFillVolumeUpFill, BsVolumeDownFill, BsFillVolumeMuteFill } from "react-icons/bs";
+import {
+  BsFillVolumeUpFill,
+  BsVolumeDownFill,
+  BsFillVolumeMuteFill,
+} from "react-icons/bs";
 export default function VolumeBar({ value, onChange, setVolume }) {
-  console.log(value);
+  // console.log(value);
   return (
     <div className="hidden flex-1 items-center justify-end lg:flex">
       {(() => {

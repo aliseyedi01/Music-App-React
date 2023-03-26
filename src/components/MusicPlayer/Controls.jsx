@@ -17,6 +17,7 @@ export default function Controls({
   value,
   onChange,
   setVolume,
+  activeSong,
   setRepeat,
   shuffle,
   setShuffle,
@@ -25,7 +26,7 @@ export default function Controls({
   handlePrevSong,
   handleNextSong,
 }) {
-  // console.log(value);
+  // console.log(activeSong);
   return (
     <div className="my-3 flex w-full flex-col  items-center justify-center gap-5">
       {/* above btn */}

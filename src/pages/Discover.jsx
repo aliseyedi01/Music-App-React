@@ -6,7 +6,7 @@ import { useGetSongTrackQuery } from "../redux/services/shazam";
 export default function Discover() {
   const { data, isFetching, error } = useGetSongTrackQuery();
 
-  console.log(data);
+  // console.log(data);
 
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
