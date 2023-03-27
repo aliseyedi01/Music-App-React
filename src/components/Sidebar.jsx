@@ -49,10 +49,12 @@ export default function Sidebar() {
             Discover
           </li>
         </Link>
-        <li className="flex items-center   text-left font-Lemon  ">
-          <HiOutlinePhotograph className="mr-2" />
-          Search
-        </li>
+        <Link to="/search">
+          <li className="flex items-center   text-left font-Lemon  ">
+            <HiOutlinePhotograph className="mr-2" />
+            Search
+          </li>
+        </Link>
         <Link to="/top-artists">
           <li className="flex items-center   text-left font-Lemon  ">
             <HiOutlineUserGroup className="mr-2" />

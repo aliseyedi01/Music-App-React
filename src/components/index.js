@@ -6,6 +6,7 @@ import MusicPlayer from "./MusicPlayer/MusicPlayer";
 import SongDetails from "./SongDetails";
 import RelatedSong from "./RelatedSong";
 import SongBar from "./SongBar";
+import SearchBar from "./SearchBar";
 export {
   Sidebar,
   SongCard,
@@ -15,4 +16,5 @@ export {
   SongDetails,
   RelatedSong,
   SongBar,
+  SearchBar,
 };
