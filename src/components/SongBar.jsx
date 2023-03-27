@@ -39,10 +39,10 @@ export default function SongBar({
               {song?.attributes?.name}
             </p>
           )} */}
-          <p className="text-xl font-bold text-light_txt_Main dark:text-dark_txt_Main">
+          <p className="  text-xl font-bold text-light_txt_Main dark:text-dark_txt_Main">
             {song?.attributes?.name}
           </p>
-          <p className="mt-1 text-base text-light_txt_Main dark:text-dark_txt_Main">
+          <p className="mt-1 font-Lobster text-base tracking-wide  text-light_txt_Main dark:text-dark_txt_Main">
             {artistId ? song?.attributes?.albumName : song?.subtitle}
           </p>
         </div>

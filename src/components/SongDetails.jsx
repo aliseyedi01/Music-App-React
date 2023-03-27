@@ -79,7 +79,7 @@ export default function SongDetails() {
         songData?.sections?.[1]?.text.map((line, i) => (
           <p
             key={i}
-            className="my-1 text-base text-light_txt_Main dark:text-dark_txt_Main "
+            className="my-1 font-Ubuntu text-base text-light_txt_Main dark:text-dark_txt_Main "
           >
             {line}
           </p>

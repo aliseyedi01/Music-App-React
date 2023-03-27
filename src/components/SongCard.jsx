@@ -41,10 +41,10 @@ export default function SongCard({ song, i, data, isPlaying, activeSong }) {
         <img src={song?.images?.coverart} className="rounded" alt="song_Img" />
       </div>
       <div className="mt-4 flex flex-col text-left">
-        <p className="truncate text-lg font-semibold capitalize text-zinc-700 dark:text-white ">
+        <p className="truncate font-Ubuntu text-lg font-semibold capitalize text-zinc-700 dark:text-white ">
           {song?.title}
         </p>
-        <p className="mt-1 truncate text-sm capitalize text-zinc-700 dark:text-gray-300">
+        <p className="mt-1 truncate font-Montserrat  text-sm capitalize text-zinc-700 dark:text-gray-300">
           {song?.subtitle}
         </p>
       </div>

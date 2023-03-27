@@ -68,15 +68,19 @@ export default function Sidebar() {
       {/* dark & light mode */}
       <div className="translate-x-6 transform justify-self-end md:transform-none">
         <button
-          className="flex  gap-2 rounded-xl border-2 border-yellow-300 p-2 text-light_txt_Main dark:border-white dark:text-dark_txt_Main    "
+          className="flex  transform gap-2 rounded-xl border-2 border-yellow-700 p-2 text-light_txt_Main outline-none transition-all duration-150 hover:bg-orange-400 dark:border-white dark:text-dark_txt_Main hover:dark:bg-white/50    "
           onClick={handleThemeChange}
         >
-          {darkMode ? (
-            <FiSun className="text-2xl text-yellow-300" />
+          {!darkMode ? (
+            <FiSun className="text-2xl text-yellow-700" />
           ) : (
             <FiMoon className="text-2xl text-white" />
           )}
-          {darkMode ? "Dark" : "Light"}
+          {darkMode ? (
+            <p className=" text-white">Dark</p>
+          ) : (
+            <p className="text-yellow-800 ">Light</p>
+          )}
         </button>
       </div>
     </div>
