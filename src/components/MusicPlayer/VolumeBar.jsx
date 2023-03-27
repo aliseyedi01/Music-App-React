@@ -12,28 +12,28 @@ export default function VolumeBar({ value, onChange, setVolume }) {
           case value === 0:
             return (
               <BsFillVolumeMuteFill
-                className="cursor-pointer text-xl text-yellow-400 dark:text-white"
+                className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
                 onClick={() => setVolume(1)}
               />
             );
           case value > 0 && value <= 0.5:
             return (
               <BsVolumeDownFill
-                className="cursor-pointer text-xl text-yellow-400 dark:text-white"
+                className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
                 onClick={() => setVolume(0)}
               />
             );
           case value > 0.5 && value <= 1:
             return (
               <BsFillVolumeUpFill
-                className="cursor-pointer text-xl text-yellow-400 dark:text-white"
+                className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
                 onClick={() => setVolume(0)}
               />
             );
           default:
             return (
               <BsFillVolumeMuteFill
-                className="cursor-pointer text-xl text-yellow-400 dark:text-white"
+                className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
                 onClick={() => setVolume(1)}
               />
             );

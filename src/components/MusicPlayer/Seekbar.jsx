@@ -13,7 +13,7 @@ export default function Seekbar({
 
   return (
     <div className="mt-3 flex w-full items-center justify-center gap-2">
-      <p className="text-yellow-400 dark:text-white">
+      <p className="text-light_txt_Main dark:text-dark_txt_Main">
         {value === 0 ? "0:00" : getTime(value)}
       </p>
       <input
@@ -24,7 +24,7 @@ export default function Seekbar({
         onInput={onInput}
         className=" h-1 w-full rounded-lg  "
       />
-      <p className="text-yellow-400 dark:text-white">
+      <p className="text-light_txt_Main dark:text-dark_txt_Main">
         {max === 0 ? "0:00" : getTime(max)}
       </p>
     </div>

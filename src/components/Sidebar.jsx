@@ -37,29 +37,29 @@ export default function Sidebar() {
     setDarkMode(!darkMode);
   };
   return (
-    <div className="flex h-full w-full  flex-col  items-center justify-start gap-4 bg-gray-500 py-2  px-4 pr-7 dark:bg-blue-900">
-      <h2 className="cursor-pointer  py-3 px-2 font-sans text-base font-bold text-gray-900 dark:text-stone-300">
+    <div className="flex h-full w-full  flex-col  items-center justify-start gap-4 bg-light_bg_Side py-2  px-4 pr-7 dark:bg-dark_bg_Side">
+      <h2 className="cursor-pointer  py-3 px-2 font-sans text-base font-bold text-light_txt_Main dark:text-dark_txt_Main">
         Music App
       </h2>
 
-      <ul className="flex w-full cursor-pointer  flex-col items-start gap-3  ">
+      <ul className="flex w-full cursor-pointer  flex-col items-start gap-3 text-light_txt_Main dark:text-dark_txt_Main  ">
         <Link to="/">
-          <li className="flex items-center   text-left font-serif font-bold text-gray-900 dark:text-stone-300">
+          <li className="flex items-center   text-left font-serif font-bold ">
             <HiOutlineHome className="mr-2" />
             Discover
           </li>
         </Link>
-        <li className="flex items-center   text-left font-serif font-bold text-gray-900 dark:text-stone-300">
+        <li className="flex items-center   text-left font-serif font-bold ">
           <HiOutlinePhotograph className="mr-2" />
           Search
         </li>
         <Link to="/top-artists">
-          <li className="flex items-center   text-left font-serif font-bold text-gray-900 dark:text-stone-300">
+          <li className="flex items-center   text-left font-serif font-bold ">
             <HiOutlineUserGroup className="mr-2" />
             Artists
           </li>
         </Link>
-        <li className="flex items-center   text-left font-serif font-bold text-gray-900 dark:text-stone-300">
+        <li className="flex items-center   text-left font-serif font-bold ">
           <HiOutlineHashtag className="mr-2" />
           Album
         </li>
@@ -68,7 +68,7 @@ export default function Sidebar() {
       {/* dark & light mode */}
       <div className="translate-x-6 transform justify-self-end md:transform-none">
         <button
-          className="flex  gap-2 rounded-xl border-2 border-yellow-300 p-2 text-white dark:border-white   dark:text-yellow-300 "
+          className="flex  gap-2 rounded-xl border-2 border-yellow-300 p-2 text-light_txt_Main dark:border-white dark:text-dark_txt_Main    "
           onClick={handleThemeChange}
         >
           {darkMode ? (

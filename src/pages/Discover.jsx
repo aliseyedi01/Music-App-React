@@ -14,7 +14,7 @@ export default function Discover() {
   if (error) return <Error />;
 
   return (
-    <div className="hide-scrollbar h-full w-full overflow-y-scroll bg-white dark:bg-cyan-600">
+    <div className="hide-scrollbar h-full w-full overflow-y-scroll bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
       <div className="flex flex-wrap justify-center gap-8 p-3 ">
         {data?.tracks.map((song, i) => (
           <SongCard

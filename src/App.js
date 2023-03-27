@@ -15,7 +15,7 @@ function App() {
           <Route path="/top-artists" element={<TopArtists />} />
         </Routes>
       </div>
-      <div className="h-full w-[28%] overflow-y-hidden bg-cyan-800">
+      <div className="h-full w-[28%] overflow-y-hidden bg-light_bg_Side dark:bg-dark_bg_Side ">
         <MusicPlayer />
         <SongDetails />
       </div>

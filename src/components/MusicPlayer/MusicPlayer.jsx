@@ -50,7 +50,7 @@ export default function MusicPlayer() {
   };
   // console.log(volume);
   return (
-    <div className="mx-auto  flex w-72 flex-col items-center justify-center  ">
+    <div className="mx-auto  flex w-72 flex-col items-center justify-center   ">
       <Track activeSong={activeSong} />
       <Seekbar
         value={appTime}

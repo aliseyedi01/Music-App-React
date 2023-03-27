@@ -14,7 +14,9 @@ export default function SongBar({
   // console.log(artistId);
   return (
     <div className="mt-3 flex w-full flex-row items-center ">
-      <h3 className="mr-2 text-base font-bold text-white">{i + 1} .</h3>
+      <h3 className="mr-2 text-base font-bold text-light_txt_Main dark:text-dark_txt_Main">
+        {i + 1} .
+      </h3>
       <div className="flex flex-1 flex-row items-center justify-between">
         <img
           className="h-16 w-16 rounded-lg"
@@ -37,10 +39,10 @@ export default function SongBar({
               {song?.attributes?.name}
             </p>
           )} */}
-          <p className="text-xl font-bold text-white">
+          <p className="text-xl font-bold text-light_txt_Main dark:text-dark_txt_Main">
             {song?.attributes?.name}
           </p>
-          <p className="mt-1 text-base text-gray-300">
+          <p className="mt-1 text-base text-light_txt_Main dark:text-dark_txt_Main">
             {artistId ? song?.attributes?.albumName : song?.subtitle}
           </p>
         </div>

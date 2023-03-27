@@ -39,10 +39,12 @@ export default function Controls({
     <div className="my-3 flex w-full flex-col  items-center justify-center gap-5">
       {/* above btn */}
 
-      <div className="flex w-full items-center justify-between gap-2 px-2 text-xl  text-yellow-400 dark:text-white">
+      <div className="flex w-full items-center justify-between gap-2 px-2 text-xl  text-light_txt_Main dark:text-dark_txt_Main">
         <BsArrowRepeat
           className={`cursor-pointer ${
-            repeat ? "text-orange-600" : "text-white"
+            repeat
+              ? "text-red-600 dark:text-orange-800"
+              : "text-light_txt_Main dark:text-dark_txt_Main"
           }`}
           onClick={() => setRepeat((prev) => !prev)}
         />
@@ -58,7 +60,7 @@ export default function Controls({
           />
         ) : (
           <BsFillPlayFill
-            className="cursor-pointer "
+            className="cursor-pointer  "
             onClick={handlePlayPause}
           />
         )}
@@ -68,7 +70,9 @@ export default function Controls({
         />
         <BsShuffle
           className={`cursor-pointer ${
-            shuffle ? "text-orange-600" : "text-white"
+            shuffle
+              ? "text-red-600 dark:text-orange-800"
+              : "text-light_txt_Main dark:text-dark_txt_Main"
           }`}
           onClick={() => setShuffle((prev) => !prev)}
         />
@@ -80,12 +84,12 @@ export default function Controls({
         <div className="flex items-center gap-3">
           {showFavorites ? (
             <BsFillHeartFill
-              className="cursor-pointer text-xl text-yellow-400 dark:text-white"
+              className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
               onClick={handleFavorites}
             />
           ) : (
             <BsHeart
-              className="cursor-pointer text-xl text-yellow-400 dark:text-white"
+              className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
               onClick={handleFavorites}
             />
           )}

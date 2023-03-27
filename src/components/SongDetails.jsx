@@ -67,11 +67,11 @@ export default function SongDetails() {
     <div className=" hide-scrollbar h-full w-full overflow-y-scroll scroll-smooth p-2 text-justify">
       <div className="flex  gap-2 ">
         <BsMusicPlayerFill
-          className="cursor-pointer text-xl text-yellow-400 dark:text-white"
+          className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
           onClick={toggleLyric}
         />
         <BsListUl
-          className=" cursor-pointer  text-xl text-yellow-400 dark:text-white"
+          className=" cursor-pointer  text-xl text-light_txt_Main dark:text-dark_txt_Main"
           onClick={toggleRelated}
         />
       </div>
@@ -79,13 +79,13 @@ export default function SongDetails() {
         songData?.sections?.[1]?.text.map((line, i) => (
           <p
             key={i}
-            className="my-1 text-base text-yellow-400 dark:text-white "
+            className="my-1 text-base text-light_txt_Main dark:text-dark_txt_Main "
           >
             {line}
           </p>
         ))
       ) : (
-        <p className="my-1 text-base text-gray-400"></p>
+        <p className="my-1 text-base text-light_txt_Main dark:text-dark_txt_Main"></p>
       )}
       <div className="h-full w-full">
         {showRelated && (

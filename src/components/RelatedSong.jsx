@@ -12,7 +12,7 @@ export default function RelatedSong({
   // console.log(data);
   return (
     <div className="flex flex-col">
-      <h1 className="mt-1 text-base text-yellow-400 dark:text-white">
+      <h1 className="mt-1 text-base text-light_txt_Main dark:text-dark_txt_Main">
         Related Song{" "}
       </h1>
       <div className=" flex w-full flex-col">

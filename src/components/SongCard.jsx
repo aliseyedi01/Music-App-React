@@ -16,7 +16,7 @@ export default function SongCard({ song, i, data, isPlaying, activeSong }) {
   };
 
   return (
-    <div className="flex h-full w-[200px] cursor-pointer flex-col rounded-lg bg-white bg-opacity-80 p-3 shadow-2xl  backdrop-blur-sm dark:bg-blue-700">
+    <div className="flex h-full w-[200px] cursor-pointer flex-col rounded-lg bg-light_bg_Main bg-opacity-80 p-3 py-3 shadow-2xl backdrop-blur-sm  dark:bg-dark_bg_Second ">
       <div className="group relative  w-full">
         {/* button on image */}
         <div
