@@ -1,7 +1,7 @@
 import { SongDetails, Sidebar, MusicPlayer } from "./components";
 import { Route, Routes } from "react-router-dom";
 
-import { Discover, TopArtists } from "./pages";
+import { Discover, TopArtists, ArtistDetail } from "./pages";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Discover />} />
           <Route path="/top-artists" element={<TopArtists />} />
+          <Route path="/artists/:artistsId" element={<ArtistDetail />} />
         </Routes>
       </div>
       <div className="h-full w-[28%] overflow-y-hidden bg-light_bg_Side dark:bg-dark_bg_Side ">

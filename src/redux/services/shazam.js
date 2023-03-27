@@ -22,6 +22,12 @@ export const shazamApi = createApi({
       // query: ({ songid }) => `songs/list-recommendations?key=${songid}`,
       query: () => "songs/list-recommendations?key=484129036&locale=en-US",
     }),
+    getArtistDetails: builder.query({
+      query: ({ artistsId }) => `artists/get-details?id=${artistsId}`,
+    }),
+    getArtistTopSongs: builder.query({
+      query: ({ artistsId }) => `/artists/get-top-songs?id=${artistsId}`,
+    }),
   }),
 });
 
@@ -29,4 +35,6 @@ export const {
   useGetSongTrackQuery,
   useGetSongDetailsQuery,
   useGetSongRelatedQuery,
+  useGetArtistDetailsQuery,
+  useGetArtistTopSongsQuery,
 } = shazamApi;
