@@ -13,7 +13,9 @@ export default function TopArtists() {
             src={artist.images.background}
             className="h-32 w-32 transform overflow-hidden rounded-full opacity-70 shadow-md transition-all duration-150 hover:opacity-100 hover:shadow-amber-300"
           />
-          <p className=" truncate text-center text-white">{artist.subtitle}</p>
+          <p className=" mt-1 truncate text-center font-Montserrat text-sm text-red-400">
+            {artist.subtitle}
+          </p>
         </div>
       ))}
     </div>

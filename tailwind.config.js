@@ -13,6 +13,12 @@ module.exports = {
         dark_bg_Second: "#171618",
         dark_txt_Main: "#dca54c",
       },
+      fontFamily: {
+        Lemon: ['"Lemon"', "serif"],
+        Lobster: ['"Lobster"', "serif"],
+        Ubuntu: ['"Ubuntu"', "serif"],
+        Montserrat: ['"Montserrat Alternates"', "sans-serif"],
+      },
     },
   },
   plugins: [require("prettier-plugin-tailwindcss")],

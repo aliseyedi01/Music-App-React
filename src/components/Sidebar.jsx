@@ -38,28 +38,28 @@ export default function Sidebar() {
   };
   return (
     <div className="flex h-full w-full  flex-col  items-center justify-start gap-4 bg-light_bg_Side py-2  px-4 pr-7 dark:bg-dark_bg_Side">
-      <h2 className="cursor-pointer  py-3 px-2 font-sans text-base font-bold text-light_txt_Main dark:text-dark_txt_Main">
+      <h2 className="cursor-pointer  py-3 px-2 font-Lobster  text-2xl  text-light_txt_Main dark:text-dark_txt_Main">
         Music App
       </h2>
 
       <ul className="flex w-full cursor-pointer  flex-col items-start gap-3 text-light_txt_Main dark:text-dark_txt_Main  ">
         <Link to="/">
-          <li className="flex items-center   text-left font-serif font-bold ">
+          <li className="flex items-center   text-left font-Lemon  ">
             <HiOutlineHome className="mr-2" />
             Discover
           </li>
         </Link>
-        <li className="flex items-center   text-left font-serif font-bold ">
+        <li className="flex items-center   text-left font-Lemon  ">
           <HiOutlinePhotograph className="mr-2" />
           Search
         </li>
         <Link to="/top-artists">
-          <li className="flex items-center   text-left font-serif font-bold ">
+          <li className="flex items-center   text-left font-Lemon  ">
             <HiOutlineUserGroup className="mr-2" />
             Artists
           </li>
         </Link>
-        <li className="flex items-center   text-left font-serif font-bold ">
+        <li className="flex items-center   text-left font-Lemon  ">
           <HiOutlineHashtag className="mr-2" />
           Album
         </li>
