@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const apiKey = process.env.REACT_APP_API_KEY_TWO;
-console.log(apiKey);
+// console.log(apiKey);
 
 export const shazamApi = createApi({
   reducerPath: "shazamApi",
