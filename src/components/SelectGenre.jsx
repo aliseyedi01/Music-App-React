@@ -1,15 +1,20 @@
-import React, { useState } from "react";
-import { useGetSongListQuery } from "../redux/services/shazam";
+// import React, { useState } from "react";
+// import { useGetSongListQuery } from "../redux/services/shazam";
 
-export default function SelectGenre() {
-  const { data } = useGetSongListQuery();
+export default function SelectGenre({
+  dataListGenre,
+  genreTitle,
+  setGenreTitle,
+}) {
+  //   const { data } = useGetSongListQuery();
 
-  const genres = data.global.genres;
+  const genres = dataListGenre?.global?.genres;
 
-  console.log(genres);
+  //   console.log(genres);
 
   //   const genreTitle = "pop";
-  const [genreTitle, setGenreTitle] = useState("pop");
+  //   const [genreTitle, setGenreTitle] = useState("pop");
+  //   console.log(genreTitle, typeof genreTitle);
   return (
     <div className="">
       <div className="mt-4 mb-10 flex w-full flex-col items-center justify-between px-2 sm:flex-row">
@@ -22,10 +27,10 @@ export default function SelectGenre() {
           value={genreTitle}
           className="   rounded-lg bg-slate-500 p-3  text-sm text-black outline-none dark:bg-gray-700 dark:text-gray-300 "
         >
-          {genres.map((genre, i) => (
+          {genres?.map((genre, i) => (
             <option
               key={i}
-              value={genre.name}
+              value={genre.listid}
               className="    w-16  bg-slate-900 text-sm text-gray-300  outline-none ring-0"
             >
               {genre.name}

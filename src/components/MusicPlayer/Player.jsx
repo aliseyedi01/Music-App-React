@@ -32,7 +32,7 @@ export default function Player({
   return (
     <audio
       ref={ref}
-      src={activeSong?.hub?.actions[1]?.uri}
+      src={activeSong?.hub?.actions?.[1]?.uri}
       loop={repeat}
       onEnded={onEnded}
       onTimeUpdate={onTimeUpdate}
