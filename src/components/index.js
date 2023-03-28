@@ -7,6 +7,7 @@ import SongDetails from "./SongDetails";
 import RelatedSong from "./RelatedSong";
 import SongBar from "./SongBar";
 import SearchBar from "./SearchBar";
+import SelectGenre from "./SelectGenre";
 export {
   Sidebar,
   SongCard,
@@ -17,4 +18,5 @@ export {
   RelatedSong,
   SongBar,
   SearchBar,
+  SelectGenre,
 };

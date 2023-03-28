@@ -1,4 +1,4 @@
-import { Loading, SongCard, Error } from "../components";
+import { Loading, SongCard, Error, SelectGenre } from "../components";
 import { useSelector } from "react-redux";
 
 import { useGetSongTrackQuery } from "../redux/services/shazam";
@@ -15,6 +15,7 @@ export default function Discover() {
 
   return (
     <div className="hide-scrollbar h-full w-full overflow-y-scroll bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
+      <SelectGenre />
       <div className="flex flex-wrap justify-center gap-8 p-3 ">
         {data?.tracks.map((song, i) => (
           <SongCard
