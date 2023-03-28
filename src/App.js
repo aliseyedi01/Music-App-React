@@ -6,7 +6,7 @@ import { Discover, TopArtists, ArtistDetail, Search, Home } from "./pages";
 function App() {
   return (
     <div className=" flex h-screen w-screen   ">
-      <div className="w-[12%]">
+      <div className="h-full w-[12%]">
         <Sidebar />
       </div>
       <div className="w-[60%]">
