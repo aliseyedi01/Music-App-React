@@ -1,7 +1,7 @@
 import { SongDetails, Sidebar, MusicPlayer } from "./components";
 import { Route, Routes } from "react-router-dom";
 
-import { Discover, TopArtists, ArtistDetail, Search } from "./pages";
+import { Discover, TopArtists, ArtistDetail, Search, Home } from "./pages";
 
 function App() {
   return (
@@ -11,7 +11,8 @@ function App() {
       </div>
       <div className="w-[60%]">
         <Routes>
-          <Route path="/" element={<Discover />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/discover" element={<Discover />} />
           <Route path="/search" element={<Search />} />
           <Route path="/top-artists" element={<TopArtists />} />
           <Route path="/artists/:artistsId" element={<ArtistDetail />} />

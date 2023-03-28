@@ -43,9 +43,15 @@ export default function Sidebar() {
       </h2>
 
       <ul className="flex w-full cursor-pointer  flex-col items-start gap-3 text-light_txt_Main dark:text-dark_txt_Main  ">
-        <Link to="/">
+        <Link to="/home">
           <li className="flex items-center   text-left font-Lemon  ">
             <HiOutlineHome className="mr-2" />
+            Home
+          </li>
+        </Link>
+        <Link to="/discover">
+          <li className="flex items-center   text-left font-Lemon  ">
+            <HiOutlineHashtag className="mr-2" />
             Discover
           </li>
         </Link>
@@ -61,10 +67,6 @@ export default function Sidebar() {
             Artists
           </li>
         </Link>
-        <li className="flex items-center   text-left font-Lemon  ">
-          <HiOutlineHashtag className="mr-2" />
-          Album
-        </li>
       </ul>
 
       {/* dark & light mode */}
