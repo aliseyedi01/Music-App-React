@@ -1,3 +1,5 @@
+import music from "../../assets/image/music.png";
+
 export default function Track({ activeSong }) {
   return (
     <div className="flex w-full flex-1 flex-col items-center justify-start gap-1 pt-2">
@@ -6,7 +8,7 @@ export default function Track({ activeSong }) {
           Now Playing
         </p> */}
         <img
-          src={activeSong?.images?.coverart}
+          src={activeSong?.images?.coverart || music}
           alt="cover art"
           className="mt-3 h-36 w-36 rounded"
         />
