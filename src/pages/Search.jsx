@@ -2,7 +2,7 @@ import React from "react";
 
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Error, Loading, SearchBar, SongCard } from "../components";
+import { Error, Loading, Navigation, SearchBar, SongCard } from "../components";
 import { useGetSongsBySearchQuery } from "../redux/services/shazam";
 
 export default function Search() {
@@ -31,8 +31,8 @@ export default function Search() {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
   return (
-    <div className="flex h-full flex-col bg-light_bg_Main py-3 pl-5  dark:bg-dark_bg_Main">
-      <div className=" w-full">
+    <div className=" flex h-full flex-col bg-light_bg_Main py-3 pl-5 dark:bg-dark_bg_Main">
+      <div className=" flex w-full items-start justify-between px-4">
         <SearchBar
           //   handleEnterKey={handleEnterKey}
           //   searchHandle={searchHandle}
@@ -40,6 +40,7 @@ export default function Search() {
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
         />
+        <Navigation />
       </div>
       {isFetching && (
         <div className="flex h-full w-full items-center justify-between">

@@ -1,15 +1,15 @@
-import { SongDetails, Sidebar, MusicPlayer } from "./components";
+import { SongDetails, Sidebar, MusicPlayer, Navigate } from "./components";
 import { Route, Routes } from "react-router-dom";
 
 import { Discover, TopArtists, ArtistDetail, Search, Home } from "./pages";
 
 function App() {
   return (
-    <div className=" flex h-screen w-screen   ">
+    <div className=" relative flex h-screen  w-screen  ">
       <div className="h-full w-[12%]">
         <Sidebar />
       </div>
-      <div className="w-[60%]">
+      <div className="hide-scroll hide-scrollbar  w-[60%] overflow-y-scroll">
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/discover" element={<Discover />} />

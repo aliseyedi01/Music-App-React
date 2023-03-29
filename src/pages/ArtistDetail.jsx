@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { RelatedSong } from "../components";
+import { Navigation, RelatedSong } from "../components";
 import { useSelector } from "react-redux";
 
 import {
@@ -24,8 +24,11 @@ export default function ArtistDetail() {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
   return (
-    <div className="hide-scrollbar flex h-full w-full flex-col overflow-y-scroll  bg-light_bg_Main py-3 text-red-300 dark:bg-dark_bg_Main">
-      <div className=" ml-6 mt-6 flex h-60  w-full gap-3">
+    <div className="hide-scrollbar relative  flex h-full w-full flex-col overflow-y-scroll  bg-light_bg_Main py-3 text-red-300 dark:bg-dark_bg_Main">
+      <div className="absolute right-2 top-3">
+        <Navigation />
+      </div>
+      <div className="   ml-6 mt-6 flex h-60  w-full gap-3">
         <div>
           <img
             src={artist?.artwork?.url.replace(/{w}|{h}/gi, "256")}
@@ -33,7 +36,7 @@ export default function ArtistDetail() {
             className="h-48 w-48 rounded "
           />
         </div>
-        <div className="flex flex-col justify-center ">
+        <div className=" flex flex-col justify-center ">
           <h1 className="text-2xl text-gray-50">{artist?.name}</h1>
           <h2 className="text-lg text-gray-400">{artist?.genreNames?.[0]}</h2>
         </div>

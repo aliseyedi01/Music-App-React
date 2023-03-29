@@ -1,15 +1,22 @@
 import React from "react";
 import { SiMusicbrainz } from "react-icons/si";
+import { Navigation } from "../components";
 
 export default function Home() {
   return (
-    <div className="hide-scrollbar   flex h-full w-full flex-col overflow-y-hidden bg-light_bg_Main  font-serif dark:bg-dark_bg_Main">
-      <div className="relative h-56">
+    <div className="hide-scrollbar relative  flex h-full w-full flex-col overflow-y-hidden bg-light_bg_Main  font-serif dark:bg-dark_bg_Main">
+      <div className=" absolute top-3 right-3 z-10 h-max w-max self-end  ">
+        <Navigation />
+      </div>
+      <div className="relative h-56 w-full">
         <img
           src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt=""
-          className="  absolute bottom-0 w-full bg-cover bg-bottom bg-no-repeat blur-sm  "
+          className=" absolute bottom-0  w-full bg-cover bg-bottom bg-no-repeat blur-sm  "
         />
+        <h2 className="absolute  left-9 top-12 bg-transparent font-Lemon text-4xl  text-indigo-400 dark:text-orange-500 ">
+          Music app
+        </h2>
         <SiMusicbrainz className="absolute -bottom-11 left-5  bg-cover text-8xl text-indigo-600 dark:text-orange-500 " />
       </div>
       <div className=" gap-1justify-center mt-10 flex h-max w-full flex-col items-center gap-3 p-3  text-justify font-Ubuntu text-light_txt_Main dark:text-dark_txt_Main ">
@@ -23,6 +30,7 @@ export default function Home() {
           recent years, enabling users to enjoy a rich audio experience anytime
           and anywhere
         </p>
+
         <p className=" p-2 ">
           With music apps, users can explore different genres of music and
           discover new artists, making it easier to find and access new music
@@ -35,17 +43,6 @@ export default function Home() {
           provide a unique and engaging platform for music lovers to enjoy their
           music and connect with others who share the same passion for music.
         </p>
-        {/* <p className="  p-2 ">
-          In conclusion, music apps have revolutionized the music industry,
-          allowing users to enjoy a personalized music experience while creating
-          new ways of connecting and sharing music. With the wide variety of
-          features offered by music apps, the possibilities for customization
-          are endless. Music apps have transformed the way people listen to
-          music, marking an exciting shift in the music industry that has
-          allowed for greater accessibility and flexibility. Whether creating
-          playlists or discovering new artists, music apps provide the perfect
-          platform for music lovers to enjoy and share their passion for music.
-        </p> */}
       </div>
     </div>
   );
