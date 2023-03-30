@@ -3,7 +3,7 @@ import { Error, Loading, RelatedSong } from "../components";
 import { setActiveSong, playPause } from "../redux/feature/playerSlice";
 import { useState } from "react";
 import { useGetSongDetailsQuery, useGetSongRelatedQuery } from "../redux/services/shazam";
-import { BsListUl, BsMusicPlayerFill } from "react-icons/bs";
+import { BsMusicNoteBeamed, BsMusicNoteList } from "react-icons/bs";
 
 export default function SongDetails() {
   const dispatch = useDispatch();
@@ -52,30 +52,30 @@ export default function SongDetails() {
   if (error || errorData) return <Error />;
 
   return (
-    <div className=" hide-scrollbar h-full w-full overflow-y-scroll scroll-smooth p-2 text-justify">
+    <div className=" hide-scrollbar h-full w-full  scroll-smooth p-2 text-justify">
       <div className="flex  gap-2 ">
-        <BsMusicPlayerFill
+        <BsMusicNoteList
           className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
           onClick={toggleLyric}
         />
-        <BsListUl
+        <BsMusicNoteBeamed
           className=" cursor-pointer  text-xl text-light_txt_Main dark:text-dark_txt_Main"
           onClick={toggleRelated}
         />
       </div>
-      {showLyric && songData?.sections?.[1]?.type === "LYRICS" ? (
-        songData?.sections?.[1]?.text.map((line, i) => (
-          <p
-            key={i}
-            className="my-1 font-Ubuntu text-base text-light_txt_Main dark:text-dark_txt_Main "
-          >
-            {line}
-          </p>
-        ))
-      ) : (
-        <p className="my-1 text-base text-light_txt_Main dark:text-dark_txt_Main"></p>
-      )}
-      <div className="h-full w-full">
+      <div className="hide-scrollbar h-full w-full overflow-y-scroll">
+        {showLyric && songData?.sections?.[1]?.type === "LYRICS" ? (
+          songData?.sections?.[1]?.text.map((line, i) => (
+            <p
+              key={i}
+              className="my-1 font-Ubuntu text-base text-light_txt_Main dark:text-dark_txt_Main "
+            >
+              {line}
+            </p>
+          ))
+        ) : (
+          <p className="my-1 text-base text-light_txt_Main dark:text-dark_txt_Main"></p>
+        )}
         {showRelated && (
           <RelatedSong
             data={relatedData.tracks}
