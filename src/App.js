@@ -11,6 +11,7 @@ function App() {
       </div>
       <div className="hide-scroll hide-scrollbar  w-[60%] overflow-y-scroll">
         <Routes>
+          <Route path="*" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/discover" element={<Discover />} />
           <Route path="/search" element={<Search />} />
