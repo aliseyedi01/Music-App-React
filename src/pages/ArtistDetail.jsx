@@ -1,12 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Navigation, RelatedSong } from "../components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setActiveSong, playPause } from "../redux/feature/playerSlice";
 
-import {
-  useGetArtistDetailsQuery,
-  useGetArtistTopSongsQuery,
-} from "../redux/services/shazam";
+import { useGetArtistDetailsQuery, useGetArtistTopSongsQuery } from "../redux/services/shazam";
 
 export default function ArtistDetail() {
   let { artistsId } = useParams();
@@ -14,14 +12,28 @@ export default function ArtistDetail() {
   const { data, isError, isFetching } = useGetArtistDetailsQuery({ artistsId });
   let artist = data?.data[0]?.attributes;
 
-  const { data: artistSong, isFetching: isFetchingArtistTopSong } =
-    useGetArtistTopSongsQuery({ artistsId });
+  const { data: artistSong, isFetching: isFetchingArtistTopSong } = useGetArtistTopSongsQuery({
+    artistsId,
+  });
 
-  console.log(data);
-  console.log(artist);
+  // console.log(data);
+  // console.log(artist);
   //   console.log(data?.data[0]?.attributes?.artwork?.url);
 
   const { activeSong, isPlaying } = useSelector((state) => state.player);
+
+  const dispatch = useDispatch();
+
+  const handlePauseClick = () => {
+    dispatch(playPause(false));
+  };
+
+  const handlePlayClick = (song, i) => {
+    dispatch(setActiveSong({ song, data, i }));
+    dispatch(playPause(true));
+  };
+
+  // console.log("left", artistSong);
 
   return (
     <div className="hide-scrollbar relative  flex h-full w-full flex-col overflow-y-scroll  bg-light_bg_Main py-3 text-red-300 dark:bg-dark_bg_Main">
@@ -43,13 +55,11 @@ export default function ArtistDetail() {
       </div>
       <div className="w-full">
         <h2 className="p-4 text-justify font-Ubuntu">
-          Nigerian singer Burna Boy opened his Apple Music Up Next spotlight
-          with a distinction: “Music’s supposed to be a universal language. You
-          understanding what I’m saying is second. The primary thing is, what
-          does the person inside you hear?” It’s a simple but radical thought:
-          You can listen on your terms, but he doesn’t have to meet you halfway.
-          Born in 1991 and raised on the southern coast of Nigeria before moving
-          to London for college.
+          Nigerian singer Burna Boy opened his Apple Music Up Next spotlight with a distinction:
+          “Music’s supposed to be a universal language. You understanding what I’m saying is second.
+          The primary thing is, what does the person inside you hear?” It’s a simple but radical
+          thought: You can listen on your terms, but he doesn’t have to meet you halfway. Born in
+          1991 and raised on the southern coast of Nigeria before moving to London for college.
         </h2>
       </div>
       <div className="hide-scrollbar ml-2 h-full w-full overflow-y-scroll  scroll-smooth ">
@@ -58,6 +68,8 @@ export default function ArtistDetail() {
           data={artistSong?.data}
           isPlaying={isPlaying}
           activeSong={activeSong}
+          handlePauseClick={handlePauseClick}
+          handlePlayClick={handlePlayClick}
         />
       </div>
     </div>

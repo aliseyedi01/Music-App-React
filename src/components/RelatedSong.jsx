@@ -9,13 +9,13 @@ export default function RelatedSong({
   handlePlayClick,
   data,
 }) {
-  // console.log(data);
+  // console.log("right", data);
   return (
-    <div className="flex flex-col">
+    <div className="flex w-full flex-col">
       <h1 className="mt-2 font-Lemon text-base text-light_txt_Main dark:text-dark_txt_Main">
         Related Song{" "}
       </h1>
-      <div className=" flex w-full flex-col">
+      <div className=" flex w-full flex-col px-3">
         {data?.map((song, i) => (
           <SongBar
             key={i}

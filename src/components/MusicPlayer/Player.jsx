@@ -28,11 +28,13 @@ export default function Player({
   }, [seekTime]);
 
   // console.log(ref);
+  // console.log(activeSong?.hub?.actions?.[1]?.uri);
 
   return (
     <audio
       ref={ref}
-      src={activeSong?.hub?.actions?.[1]?.uri}
+      src={activeSong?.hub?.actions?.[1]?.uri || activeSong?.attributes?.previews?.[0]?.url}
+      // src={activeSong?.hub?.actions?.[1]?.uri}
       loop={repeat}
       onEnded={onEnded}
       onTimeUpdate={onTimeUpdate}

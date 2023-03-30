@@ -2,16 +2,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { Error, Loading, RelatedSong } from "../components";
 import { setActiveSong, playPause } from "../redux/feature/playerSlice";
 import { useState } from "react";
-import {
-  useGetSongDetailsQuery,
-  useGetSongRelatedQuery,
-} from "../redux/services/shazam";
+import { useGetSongDetailsQuery, useGetSongRelatedQuery } from "../redux/services/shazam";
 import { BsListUl, BsMusicPlayerFill } from "react-icons/bs";
 
 export default function SongDetails() {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const songid = activeSong.key;
+  const songid = activeSong?.key;
   //   console.log(activeSong);
   // console.log(songid);
 
@@ -29,22 +26,14 @@ export default function SongDetails() {
   };
 
   // fetch lyrics data
-  const {
-    data: songData,
-    isFetching,
-    error: errorData,
-  } = useGetSongDetailsQuery({ songid });
+  const { data: songData, isFetching, error: errorData } = useGetSongDetailsQuery({ songid });
 
   // console.log(songData);
 
   // const songid1 = "484129036";
   // console.log(songid1, typeof songid1);
   // fetch related data
-  const {
-    data: relatedData,
-    isFetching: isFetchingSongRelated,
-    error,
-  } = useGetSongRelatedQuery();
+  const { data: relatedData, isFetching: isFetchingSongRelated, error } = useGetSongRelatedQuery();
 
   // console.log(relatedData);
   // console.log(error);
@@ -59,8 +48,7 @@ export default function SongDetails() {
   };
 
   // fetch and error handling
-  if (isFetching || isFetchingSongRelated)
-    return <Loading title="Searching song details" />;
+  if (isFetching || isFetchingSongRelated) return <Loading title="Searching song details" />;
   if (error || errorData) return <Error />;
 
   return (

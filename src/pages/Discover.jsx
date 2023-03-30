@@ -23,7 +23,7 @@ export default function Discover() {
   } = useGetSongsByGenreQuery(genreTitle);
 
   // console.log(genreTitle);
-  console.log(dataGenre);
+  // console.log(dataGenre);
 
   if (fetchGenre) return <Loading />;
   if (errorGenre) return <Error />;

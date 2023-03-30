@@ -11,9 +11,8 @@ export default function SongBar({
   handlePauseClick,
   handlePlayClick,
 }) {
-  // console.log(artistId);
   return (
-    <div className="mt-3 flex w-full flex-row items-center ">
+    <div className="mt-3 flex w-full items-center justify-evenly ">
       <h3 className="mr-2 text-base font-bold text-light_txt_Main dark:text-dark_txt_Main">
         {i + 1} .
       </h3>
@@ -22,41 +21,28 @@ export default function SongBar({
           className="h-16 w-16 rounded-lg"
           src={
             artistId
-              ? song?.attributes?.artwork?.url
-                  .replace("{w}", "125")
-                  .replace("{h}", "125")
+              ? song?.attributes?.artwork?.url.replace("{w}", "125").replace("{h}", "125")
               : song?.images?.coverart
           }
           alt={song?.title}
         />
         <div className="mx-2 flex flex-1 flex-col justify-center">
-          {/* {!artistId ? (
-            <Link to={`/songs/${song.key}`}>
-              <p className="text-xl font-bold text-white">{song?.title}</p>
-            </Link>
-          ) : (
-            <p className="text-xl font-bold text-white">
-              {song?.attributes?.name}
-            </p>
-          )} */}
-          <p className="  text-xl font-bold text-light_txt_Main dark:text-dark_txt_Main">
+          <p className="  w-4/6 truncate font-serif  text-base font-bold text-light_txt_Main dark:text-dark_txt_Main">
             {song?.attributes?.name}
           </p>
-          <p className="mt-1 font-Lobster text-base tracking-wide  text-light_txt_Main dark:text-dark_txt_Main">
+          <p className="mt-1 truncate font-Lobster text-sm tracking-wide  text-light_txt_Main dark:text-amber-700">
             {artistId ? song?.attributes?.albumName : song?.subtitle}
           </p>
         </div>
       </div>
-      {!artistId ? (
-        <PlayPause
-          isPlaying={isPlaying}
-          activeSong={activeSong}
-          song={song}
-          i={i}
-          handlePause={handlePauseClick}
-          handlePlay={handlePlayClick}
-        />
-      ) : null}
+      <PlayPause
+        isPlaying={isPlaying}
+        activeSong={activeSong}
+        song={song}
+        i={i}
+        handlePause={handlePauseClick}
+        handlePlay={handlePlayClick}
+      />
     </div>
   );
 }

@@ -4,8 +4,9 @@ import { Track, Controls, Seekbar, Player } from "../MusicPlayer";
 import { nextSong, prevSong, playPause } from "../../redux/feature/playerSlice";
 
 export default function MusicPlayer() {
-  const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
-    useSelector((state) => state.player);
+  const { activeSong, currentSongs, currentIndex, isActive, isPlaying } = useSelector(
+    (state) => state.player
+  );
 
   const [duration, setDuration] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
@@ -33,7 +34,7 @@ export default function MusicPlayer() {
     dispatch(playPause(false));
 
     if (!shuffle) {
-      dispatch(nextSong((currentIndex + 1) % currentSongs.length));
+      dispatch(nextSong((currentIndex + 1) % currentSongs?.length));
     } else {
       dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
     }

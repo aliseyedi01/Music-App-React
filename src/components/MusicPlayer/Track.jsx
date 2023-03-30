@@ -8,17 +8,25 @@ export default function Track({ activeSong }) {
           Now Playing
         </p> */}
         <img
-          src={activeSong?.images?.coverart || music}
+          src={
+            activeSong?.images?.coverart ||
+            activeSong?.attributes?.artwork?.url.replace(/{w}|{h}/gi, "256") ||
+            music
+          }
           alt="cover art"
           className="mt-3 h-36 w-36 rounded"
         />
       </div>
       <div>
         <p className="truncate text-center font-Lemon text-lg  capitalize text-light_txt_Main dark:text-dark_txt_Main">
-          {activeSong?.title ? activeSong?.title : "No active Song"}
+          {activeSong.type === "songs"
+            ? activeSong?.attributes?.name
+            : activeSong?.title || "No active Song"}
         </p>
         <p className="truncate font-Ubuntu  text-sm capitalize text-light_txt_Main dark:text-dark_txt_Main">
-          {activeSong?.subtitle ? activeSong?.subtitle : "No active Song"}
+          {activeSong.type === "songs"
+            ? activeSong?.attributes?.albumName
+            : activeSong?.subtitle || "No active Song"}
         </p>
       </div>
     </div>
