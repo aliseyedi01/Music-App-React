@@ -42,11 +42,6 @@ export default function Search() {
         />
         <Navigation />
       </div>
-      {isFetching && (
-        <div className="flex h-full w-full items-center justify-between">
-          <Loading />
-        </div>
-      )}
       {isError && (
         <div className="flex items-center justify-between">
           <Error />
@@ -62,6 +57,7 @@ export default function Search() {
               activeSong={activeSong}
               data={data.tracks}
               i={i}
+              isFetching={isFetching}
             />
           ))}
         </div>

@@ -48,7 +48,7 @@ export default function SongDetails() {
   };
 
   // fetch and error handling
-  if (isFetching || isFetchingSongRelated) return <Loading title="Searching song details" />;
+  // if (isFetching || isFetchingSongRelated) return <Loading title="Searching song details" />;
   if (error || errorData) return <Error />;
 
   return (
@@ -78,11 +78,12 @@ export default function SongDetails() {
         )}
         {showRelated && (
           <RelatedSong
-            data={relatedData.tracks}
+            data={relatedData?.tracks}
             isPlaying={isPlaying}
             activeSong={activeSong}
             handlePauseClick={handlePauseClick}
             handlePlayClick={handlePlayClick}
+            isFetching={isFetchingSongRelated}
           />
         )}
       </div>

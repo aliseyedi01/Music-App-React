@@ -13,20 +13,21 @@ export default function Discover() {
   // console.log(data);
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
-  const { data: dataListGenre } = useGetSongListQuery();
+  const { data: dataListGenre, isFetching: isFetchingListQuery } = useGetSongListQuery();
   const [genreTitle, setGenreTitle] = useState("genre-global-chart-1");
 
   const {
     data: dataGenre,
-    isFetching: fetchGenre,
+    isFetching: isFetchingSongByGenre,
     error: errorGenre,
+    isLoading: loadingGenre,
   } = useGetSongsByGenreQuery(genreTitle);
 
-  // console.log(genreTitle);
-  // console.log(dataGenre);
+  // console.log(loadingGenre);
+  // console.log(isFetchingSongByGenre);
 
-  if (fetchGenre) return <Loading />;
-  if (errorGenre) return <Error />;
+  // if (isFetchingSongByGenre) return <Loading />;
+  // if (errorGenre) return <Error />;
 
   return (
     <div className="hide-scrollbar h-full w-full overflow-y-scroll bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
@@ -34,6 +35,7 @@ export default function Discover() {
         dataListGenre={dataListGenre}
         genreTitle={genreTitle}
         setGenreTitle={setGenreTitle}
+        isFetching={isFetchingListQuery}
       />
       <div className="flex flex-wrap justify-center gap-8 p-3 ">
         {dataGenre?.tracks.map((song, i) => (
@@ -44,6 +46,9 @@ export default function Discover() {
             data={dataGenre}
             isPlaying={isPlaying}
             activeSong={activeSong}
+            isFetching={isFetchingSongByGenre}
+            errorGenre={errorGenre}
+            loadingGenre={loadingGenre}
           />
         ))}
       </div>

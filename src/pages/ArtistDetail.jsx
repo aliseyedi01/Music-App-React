@@ -9,7 +9,11 @@ import { useGetArtistDetailsQuery, useGetArtistTopSongsQuery } from "../redux/se
 export default function ArtistDetail() {
   let { artistsId } = useParams();
 
-  const { data, isError, isFetching } = useGetArtistDetailsQuery({ artistsId });
+  const {
+    data,
+    isError,
+    isFetching: isFetchingArtistDetails,
+  } = useGetArtistDetailsQuery({ artistsId });
   let artist = data?.data[0]?.attributes;
 
   const { data: artistSong, isFetching: isFetchingArtistTopSong } = useGetArtistTopSongsQuery({
@@ -42,15 +46,27 @@ export default function ArtistDetail() {
       </div>
       <div className="   ml-6 mt-6 flex h-60  w-full gap-3">
         <div>
-          <img
-            src={artist?.artwork?.url.replace(/{w}|{h}/gi, "256")}
-            // alt={artist?.name}
-            className="h-48 w-48 rounded "
-          />
+          {isFetchingArtistDetails ? (
+            <div className="h-48 w-48 animate-pulse rounded bg-slate-600"></div>
+          ) : (
+            <img
+              src={artist?.artwork?.url.replace(/{w}|{h}/gi, "256")}
+              // alt={artist?.name}
+              className="h-48 w-48 rounded "
+            />
+          )}
         </div>
         <div className=" flex flex-col justify-center ">
-          <h1 className="text-2xl text-gray-50">{artist?.name}</h1>
-          <h2 className="text-lg text-gray-400">{artist?.genreNames?.[0]}</h2>
+          {isFetchingArtistDetails ? (
+            <div className="h-8 w-48 animate-pulse rounded bg-slate-600"></div>
+          ) : (
+            <h1 className="text-2xl text-gray-50">{artist?.name}</h1>
+          )}
+          {isFetchingArtistDetails ? (
+            <div className="mt-2 h-8 w-48 animate-pulse rounded bg-slate-600"></div>
+          ) : (
+            <h2 className="text-lg text-gray-400">{artist?.genreNames?.[0]}</h2>
+          )}
         </div>
       </div>
       <div className="w-full">
@@ -70,6 +86,7 @@ export default function ArtistDetail() {
           activeSong={activeSong}
           handlePauseClick={handlePauseClick}
           handlePlayClick={handlePlayClick}
+          isFetching={isFetchingArtistDetails}
         />
       </div>
     </div>

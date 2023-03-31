@@ -19,7 +19,7 @@ export default function Track({ activeSong }) {
       </div>
       <div>
         <p className="truncate text-center font-Lemon text-lg  capitalize text-light_txt_Main dark:text-dark_txt_Main">
-          {activeSong.type === "songs"
+          {activeSong?.type === "songs"
             ? activeSong?.attributes?.name
             : activeSong?.title || "No active Song"}
         </p>

@@ -5,9 +5,12 @@ import { Navigation } from "../components";
 import { useGetSongTrackQuery } from "../redux/services/shazam";
 
 export default function TopArtists() {
-  const { data } = useGetSongTrackQuery();
+  const { data, isFetching, error, isLoading } = useGetSongTrackQuery();
   // console.log(data.tracks);
-  // console.log(data);
+
+  // console.log("isFetching", isFetching);
+  // console.log("error", error);
+  // console.log("isLoading ", isLoading);
 
   return (
     <div className="  flex h-full w-full flex-col   bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
@@ -22,11 +25,15 @@ export default function TopArtists() {
           <Link to={`/artists/${artist?.artists[0].adamid}`}>
             {/* <Link to="/artists/"> */}
             <div key={i} className=" m-4 h-36 w-36 ">
-              <div className="h-32 w-32 overflow-hidden rounded-full">
-                <img
-                  src={artist.images.background}
-                  className="transition-ease-in h-32 w-32 transform overflow-hidden rounded-full shadow-md transition-all    duration-700 hover:scale-125   "
-                />
+              <div className="h-32 w-32 overflow-hidden rounded-full ">
+                {isFetching && isLoading ? (
+                  <div className="h-32 w-32 animate-pulse bg-slate-700 "></div>
+                ) : (
+                  <img
+                    src={artist.images.background}
+                    className="transition-ease-in h-32 w-32 transform overflow-hidden rounded-full shadow-md transition-all    duration-700 hover:scale-125   "
+                  />
+                )}
               </div>
 
               <p className=" mt-1 truncate text-center font-Montserrat text-sm font-semibold text-light_txt_Main dark:text-dark_txt_Main">

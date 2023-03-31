@@ -8,6 +8,7 @@ export default function RelatedSong({
   handlePauseClick,
   handlePlayClick,
   data,
+  isFetching,
 }) {
   // console.log("right", data);
   return (
@@ -26,6 +27,7 @@ export default function RelatedSong({
             activeSong={activeSong}
             handlePauseClick={handlePauseClick}
             handlePlayClick={() => handlePlayClick(song, i)}
+            isFetching={isFetching}
           />
         ))}
       </div>
