@@ -1,9 +1,19 @@
 import { useDispatch } from "react-redux";
 import { FaPlayCircle, FaPauseCircle } from "react-icons/fa";
 import { playPause, setActiveSong } from "../redux/feature/playerSlice";
+import { useEffect, useState } from "react";
+import DefaultPlayMusic from "../../src/assets/image/defaultPlay.jpg";
 
 export default function SongCard({ song, i, data, isPlaying, activeSong, isFetching }) {
   const dispatch = useDispatch();
+
+  const [imageLoadingStates, setImageLoadingStates] = useState(
+    data?.tracks ? Object.fromEntries(data.tracks.map((artist, i) => [i, true])) : {}
+  );
+
+  useEffect(() => {
+    setImageLoadingStates((prev) => ({ ...prev, [i]: true }));
+  }, []);
 
   // play and pause button
   const handlePlayClick = () => {
@@ -15,8 +25,17 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
   };
 
   // console.log("errorGenre ", errorGenre);
-  console.log("isFetching ", isFetching);
   // isFetching = true;
+
+  const handleImageLoad = (i) => {
+    setImageLoadingStates((prev) => ({ ...prev, [i]: false }));
+    // setIsVisible((prev) => ({ ...prev, [index]: true }));
+  };
+
+  // console.log("isFetching ", isFetching);
+  // console.log("loading", imageLoadingStates);
+  // console.log("i", i);
+  // console.log("data?.tracks", data?.tracks);
 
   return (
     <div className="flex h-full w-[200px] cursor-pointer flex-col rounded-lg bg-light_bg_Main bg-opacity-80 p-3 py-3 shadow-2xl backdrop-blur-sm  dark:bg-dark_bg_Second ">
@@ -39,11 +58,13 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
             />
           )}
         </div>
-        {isFetching ? (
-          <div className="h-44 w-44 animate-pulse rounded bg-slate-600"></div>
-        ) : (
-          <img src={song?.images?.coverart} className="rounded" alt="song_Img" />
-        )}
+
+        <img
+          src={!imageLoadingStates[i] ? song?.images?.coverart : DefaultPlayMusic}
+          className="h-44 w-44 rounded"
+          alt="song_Img"
+          onLoad={() => handleImageLoad(i)}
+        />
       </div>
       <div className="mt-4 flex flex-col text-left">
         {isFetching ? (
