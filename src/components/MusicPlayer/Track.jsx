@@ -17,13 +17,13 @@ export default function Track({ activeSong }) {
           className="mt-3 h-36 w-36 rounded"
         />
       </div>
-      <div>
+      <div className="w-52 self-center">
         <p className="truncate text-center font-Lemon text-lg  capitalize text-light_txt_Main dark:text-dark_txt_Main">
           {activeSong?.type === "songs"
             ? activeSong?.attributes?.name
             : activeSong?.title || "No active Song"}
         </p>
-        <p className="truncate font-Ubuntu  text-sm capitalize text-light_txt_Main dark:text-dark_txt_Main">
+        <p className="truncate text-center font-Ubuntu  text-sm capitalize text-light_txt_Main dark:text-dark_txt_Main">
           {activeSong.type === "songs"
             ? activeSong?.attributes?.albumName
             : activeSong?.subtitle || "No active Song"}
