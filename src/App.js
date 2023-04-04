@@ -11,11 +11,11 @@ const ArtistDetail = lazy(() => import("./pages/ArtistDetail"));
 function App() {
   return (
     <div className=" relative flex h-screen  w-screen  ">
-      <div className="h-full w-[12%]">
+      <div className="hidden h-full w-4/6 md:block md:w-[12%]">
         <Sidebar />
       </div>
 
-      <div className="hide-scroll hide-scrollbar  w-[60%] overflow-y-scroll ">
+      <div className="hide-scroll hide-scrollbar w-full  overflow-y-scroll md:w-[60%] ">
         <Routes>
           <Route
             path="*"
@@ -68,7 +68,7 @@ function App() {
         </Routes>
       </div>
 
-      <div className="h-full w-[28%] overflow-y-hidden bg-light_bg_Side dark:bg-dark_bg_Side ">
+      <div className="hidden h-full w-[28%] overflow-y-hidden bg-light_bg_Side dark:bg-dark_bg_Side md:block ">
         <MusicPlayer />
         <SongDetails />
       </div>
