@@ -24,12 +24,8 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
     dispatch(playPause(false));
   };
 
-  // console.log("errorGenre ", errorGenre);
-  // isFetching = true;
-
   const handleImageLoad = (i) => {
     setImageLoadingStates((prev) => ({ ...prev, [i]: false }));
-    // setIsVisible((prev) => ({ ...prev, [index]: true }));
   };
 
   // console.log("isFetching ", isFetching);
@@ -40,7 +36,7 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
   return (
     <div className="flex h-full w-[200px] cursor-pointer flex-col rounded-lg bg-light_bg_Main bg-opacity-80 p-3 py-3 shadow-2xl backdrop-blur-sm  dark:bg-dark_bg_Second ">
       <div className="group relative  w-full">
-        {/* button on image */}
+        {/* button */}
         <div
           className={`absolute inset-0  items-center justify-center bg-gray-800 bg-opacity-50 group-hover:flex ${
             activeSong?.title === song.title ? "flex bg-gray-800 bg-opacity-70" : "hidden"
@@ -58,14 +54,15 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
             />
           )}
         </div>
-
+        {/* imaage music */}
         <img
-          src={!imageLoadingStates[i] ? song?.images?.coverart : DefaultPlayMusic}
+          src={!imageLoadingStates[i] && !isFetching ? song?.images?.coverart : DefaultPlayMusic}
           className="h-44 w-44 rounded"
           alt="song_Img"
           onLoad={() => handleImageLoad(i)}
         />
       </div>
+      {/* title and subtitle */}
       <div className="mt-4 flex flex-col text-left">
         {isFetching ? (
           <div className="h-4 w-40 animate-pulse rounded-sm bg-slate-600"></div>
