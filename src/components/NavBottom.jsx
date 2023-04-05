@@ -11,7 +11,7 @@ export default function NavBottom() {
   };
   return (
     <div className=" text-grey-200 absolute bottom-0 left-0  z-50  block h-10 w-full bg-opacity-30 text-xl text-light_bg_Side  backdrop-blur-2xl md:hidden">
-      <div className="flex h-9 w-full items-center justify-between bg-dark_bg_Side bg-opacity-30 px-2 text-lime-800 backdrop-blur-lg dark:text-orange-500  ">
+      <div className="flex h-9 w-full items-center justify-between bg-amber-900 bg-opacity-40 px-2 text-orange-300 backdrop-blur-xl  dark:bg-indigo-400 dark:bg-opacity-30  dark:text-orange-500 ">
         <NavLink to="/">
           <HiHome className="" />
         </NavLink>
@@ -29,7 +29,7 @@ export default function NavBottom() {
           onClick={handleThemeChange}
         >
           {!darkMode ? (
-            <HiSun className="cursor-pointer text-2xl text-yellow-400" />
+            <HiSun className="cursor-pointer text-2xl text-yellow-300" />
           ) : (
             <HiMoon className="cursor-pointer text-2xl text-white" />
           )}
