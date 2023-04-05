@@ -30,14 +30,14 @@ export default function Discover() {
   // if (errorGenre) return <Error />;
 
   return (
-    <div className="hide-scrollbar h-full w-full overflow-y-scroll bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
+    <div className="hide-scrollbar h-full w-full  overflow-y-scroll bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
       <SelectGenre
         dataListGenre={dataListGenre}
         genreTitle={genreTitle}
         setGenreTitle={setGenreTitle}
         isFetching={isFetchingListQuery}
       />
-      <div className="flex flex-wrap justify-center gap-8 p-3 ">
+      <div className=" grid  grid-cols-2 gap-4 p-3 md:grid-cols-3 md:gap-8 ">
         {dataGenre?.tracks.map((song, i) => (
           <SongCard
             key={song.key}

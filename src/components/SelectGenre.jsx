@@ -14,13 +14,13 @@ export default function SelectGenre({ dataListGenre, genreTitle, setGenreTitle, 
 
   // isFetching = true;
   return (
-    <div>
-      <div className="mt-4 mb-10 flex w-full flex-col items-center justify-between px-2 sm:flex-row">
+    <>
+      <div className="mt-2 mb-4 flex w-full flex-col  items-center justify-between gap-2 px-2 md:mt-4 md:mb-10 md:flex-row ">
         {isFetching ? (
           <div className=" h-11 w-64 animate-pulse bg-slate-600"></div>
         ) : (
           <div className="flex items-baseline justify-start gap-2 text-left text-3xl  text-white">
-            <span className="font-Lemon text-2xl">Discover : </span>
+            <span className="font-Lemon text-lg md:text-2xl">Discover : </span>
             <p className="font-mono text-xl ">{genreTitle}</p>
           </div>
         )}
@@ -30,7 +30,7 @@ export default function SelectGenre({ dataListGenre, genreTitle, setGenreTitle, 
           <select
             onChange={(e) => setGenreTitle(e.target.value)}
             value={genreTitle}
-            className="   rounded-lg bg-slate-500 p-3  text-sm text-black outline-none dark:bg-gray-700 dark:text-gray-300 "
+            className="self-end rounded-lg bg-slate-500 p-3  text-sm text-black outline-none dark:bg-gray-700 dark:text-gray-300 "
           >
             {genres?.map((genre, i) => (
               <option
@@ -44,6 +44,6 @@ export default function SelectGenre({ dataListGenre, genreTitle, setGenreTitle, 
           </select>
         )}
       </div>
-    </div>
+    </>
   );
 }

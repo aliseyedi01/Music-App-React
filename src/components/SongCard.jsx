@@ -57,7 +57,7 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
         {/* imaage music */}
         <img
           src={!imageLoadingStates[i] && !isFetching ? song?.images?.coverart : DefaultPlayMusic}
-          className="h-44 w-44 rounded"
+          className="h-32 w-32 rounded md:h-44 md:w-44"
           alt="song_Img"
           onLoad={() => handleImageLoad(i)}
         />
@@ -65,16 +65,16 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
       {/* title and subtitle */}
       <div className="mt-4 flex flex-col text-left">
         {isFetching ? (
-          <div className="h-4 w-40 animate-pulse rounded-sm bg-slate-600"></div>
+          <div className="h-4 w-32 animate-pulse truncate  rounded-sm bg-slate-600 md:w-40"></div>
         ) : (
-          <p className="truncate font-Ubuntu text-lg font-semibold capitalize text-zinc-700 dark:text-white ">
+          <p className="h-5 w-32 truncate font-Ubuntu text-base  font-semibold capitalize text-zinc-700 dark:text-white md:w-44 md:text-lg ">
             {song?.title}
           </p>
         )}
         {isFetching ? (
-          <div className="mt-2  h-4 w-40 animate-pulse rounded-sm bg-slate-600"></div>
+          <div className="mt-1  h-4 w-24 animate-pulse rounded-sm bg-slate-600 md:w-40"></div>
         ) : (
-          <p className="mt-1 truncate font-Montserrat  text-sm capitalize text-zinc-700 dark:text-gray-300">
+          <p className="mt-1 mb-1 h-4 w-24 truncate  font-Montserrat text-xs  capitalize text-zinc-700 dark:text-gray-300 md:text-sm">
             {song?.subtitle}
           </p>
         )}
