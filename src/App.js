@@ -1,4 +1,4 @@
-import { SongDetails, Sidebar, MusicPlayer, Loading } from "./components";
+import { SongDetails, Sidebar, MusicPlayer, Loading, NavBottom } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
@@ -11,6 +11,8 @@ const ArtistDetail = lazy(() => import("./pages/ArtistDetail"));
 function App() {
   return (
     <div className=" relative flex h-screen  w-screen  ">
+      <NavBottom />
+
       <div className="hidden h-full w-4/6 md:block md:w-[12%]">
         <Sidebar />
       </div>
