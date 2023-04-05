@@ -1,8 +1,14 @@
 import React from "react";
-import { HiHome, HiSearchCircle, HiUserGroup, HiViewGrid } from "react-icons/hi";
+import { HiHome, HiSearchCircle, HiUserGroup, HiViewGrid, HiSun, HiMoon } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
+import useDarkMode from "../hooks/useDarkMode";
 
 export default function NavBottom() {
+  const [darkMode, setDarkMode] = useDarkMode();
+
+  const handleThemeChange = () => {
+    setDarkMode(!darkMode);
+  };
   return (
     <div className=" text-grey-200 absolute bottom-0 left-0  z-50  block h-10 w-full bg-opacity-30 text-xl text-light_bg_Side  backdrop-blur-2xl md:hidden">
       <div className="flex h-9 w-full items-center justify-between bg-dark_bg_Side bg-opacity-30 px-2 text-lime-800 backdrop-blur-lg dark:text-orange-500  ">
@@ -18,6 +24,16 @@ export default function NavBottom() {
         <NavLink to="/top-artists">
           <HiUserGroup className="" />
         </NavLink>
+        <button
+          className="flex w-7 transform   border-yellow-700 p-1 text-light_txt_Main outline-none transition-all duration-150  dark:border-white dark:text-dark_txt_Main   "
+          onClick={handleThemeChange}
+        >
+          {!darkMode ? (
+            <HiSun className="cursor-pointer text-2xl text-yellow-400" />
+          ) : (
+            <HiMoon className="cursor-pointer text-2xl text-white" />
+          )}
+        </button>
       </div>
     </div>
   );

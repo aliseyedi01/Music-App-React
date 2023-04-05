@@ -1,14 +1,7 @@
 import { Link } from "react-router-dom";
 import { SiMusicbrainz } from "react-icons/si";
-
-import {
-  HiHome,
-  HiSearchCircle,
-  HiUserGroup,
-  HiViewGrid,
-  HiSun,
-  HiMoon,
-} from "react-icons/hi";
+import useDarkMode from "../hooks/useDarkMode";
+import { HiHome, HiSearchCircle, HiUserGroup, HiViewGrid, HiSun, HiMoon } from "react-icons/hi";
 import { useState, useEffect } from "react";
 import {
   HiOutlineHashtag,
@@ -18,39 +11,42 @@ import {
 } from "react-icons/hi";
 
 export default function Sidebar() {
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useDarkMode();
 
-  // store dark mode in local storage
-  useEffect(() => {
-    const storedDarkMode = localStorage.getItem("darkMode");
-    if (storedDarkMode === "true") {
-      setDarkMode(true);
-    }
-  }, []);
-  useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
-  }, [darkMode]);
-
-  // change mode with changes theme
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
-
-  // handle dark mode button
   const handleThemeChange = () => {
     setDarkMode(!darkMode);
   };
+
+  // // store dark mode in local storage
+  // useEffect(() => {
+  //   const storedDarkMode = localStorage.getItem("darkMode");
+  //   if (storedDarkMode === "true") {
+  //     setDarkMode(true);
+  //   }
+  // }, []);
+  // useEffect(() => {
+  //   localStorage.setItem("darkMode", darkMode);
+  // }, [darkMode]);
+
+  // // change mode with changes theme
+  // useEffect(() => {
+  //   if (darkMode) {
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  // }, [darkMode]);
+
+  // // handle dark mode button
+  // const handleThemeChange = () => {
+  //   setDarkMode(!darkMode);
+  // };
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-start gap-5   bg-light_bg_Side p-3 dark:bg-dark_bg_Side">
       <div className="flex w-full items-center justify-center text-light_txt_Main dark:text-dark_txt_Main">
         <SiMusicbrainz className="mr-1 text-2xl" />
-        <h2 className="cursor-pointer  py-3 px-1 font-Lobster  text-xl  ">
-          Music App
-        </h2>
+        <h2 className="cursor-pointer  py-3 px-1 font-Lobster  text-xl  ">Music App</h2>
       </div>
 
       <div className="">
