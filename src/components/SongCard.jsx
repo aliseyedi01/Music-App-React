@@ -34,7 +34,7 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
   // console.log("data?.tracks", data?.tracks);
 
   return (
-    <div className="flex h-full w-[9.8rem] cursor-pointer flex-col rounded-lg bg-light_bg_Main bg-opacity-80 p-3 py-3 shadow-2xl backdrop-blur-sm  dark:bg-dark_bg_Second ">
+    <div className="flex h-full w-[9.8rem] cursor-pointer flex-col rounded-lg bg-light_bg_Main bg-opacity-80 p-3 py-3 shadow-2xl backdrop-blur-sm dark:bg-dark_bg_Second  md:w-max ">
       <div className="group relative  w-full">
         {/* button */}
         <div
@@ -67,7 +67,7 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
         {isFetching ? (
           <div className="h-4 w-32 animate-pulse truncate  rounded-sm bg-slate-600 md:w-40"></div>
         ) : (
-          <p className="h-5 w-32 truncate font-Ubuntu text-base  font-semibold capitalize text-zinc-700 dark:text-white md:w-44 md:text-lg ">
+          <p className="h-5 w-32 truncate font-Ubuntu text-base font-semibold  capitalize text-zinc-700 dark:text-white md:h-8 md:w-44 md:text-lg ">
             {song?.title}
           </p>
         )}
