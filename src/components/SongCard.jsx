@@ -38,13 +38,13 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
       <div className="group relative  w-full">
         {/* button */}
         <div
-          className={`absolute inset-0  items-center justify-center bg-gray-800 bg-opacity-50 group-hover:flex ${
+          className={`absolute inset-0 items-center  justify-center bg-gray-800 bg-opacity-50 group-hover:flex  max-md:-translate-x-6  ${
             activeSong?.title === song.title ? "flex bg-gray-800 bg-opacity-70" : "hidden"
           }`}
         >
           {isPlaying && activeSong?.title === song?.title ? (
             <FaPauseCircle
-              className=" text-3xl text-gray-300 dark:text-blue-400"
+              className="  text-xl text-gray-300 dark:text-blue-400 md:text-3xl"
               onClick={handlePauseClick}
             />
           ) : (
