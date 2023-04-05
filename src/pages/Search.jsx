@@ -31,11 +31,9 @@ export default function Search() {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
   return (
-    <div className=" flex h-full flex-col bg-light_bg_Main py-3 pl-5 dark:bg-dark_bg_Main">
+    <div className=" flex h-full w-full flex-col bg-light_bg_Main py-3 dark:bg-dark_bg_Main md:pl-5">
       <div className=" flex w-full items-start justify-between px-4">
         <SearchBar
-          //   handleEnterKey={handleEnterKey}
-          //   searchHandle={searchHandle}
           SearchInputHandle={SearchInputHandle}
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
@@ -47,20 +45,18 @@ export default function Search() {
           <Error />
         </div>
       )}
-      <div className="hide-scrollbar flex h-full w-full items-center justify-center overflow-y-scroll">
-        <div className=" flex flex-wrap justify-start  gap-5  ">
-          {data?.tracks?.hits.map((song, i) => (
-            <SongCard
-              key={song.track.key}
-              song={song.track}
-              isPlaying={isPlaying}
-              activeSong={activeSong}
-              data={data.tracks}
-              i={i}
-              isFetching={isFetching}
-            />
-          ))}
-        </div>
+      <div className="hide-scrollbar grid  h-full w-full grid-cols-2 place-items-center gap-2  gap-x-3 overflow-y-scroll p-3 md:grid-cols-3">
+        {data?.tracks?.hits.map((song, i) => (
+          <SongCard
+            key={song.track.key}
+            song={song.track}
+            isPlaying={isPlaying}
+            activeSong={activeSong}
+            data={data.tracks}
+            i={i}
+            isFetching={isFetching}
+          />
+        ))}
       </div>
     </div>
   );
