@@ -34,11 +34,11 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
   // console.log("data?.tracks", data?.tracks);
 
   return (
-    <div className="flex h-full w-[200px] cursor-pointer flex-col rounded-lg bg-light_bg_Main bg-opacity-80 p-3 py-3 shadow-2xl backdrop-blur-sm  dark:bg-dark_bg_Second ">
+    <div className="flex h-full w-[9.8rem] cursor-pointer flex-col rounded-lg bg-light_bg_Main bg-opacity-80 p-3 py-3 shadow-2xl backdrop-blur-sm  dark:bg-dark_bg_Second ">
       <div className="group relative  w-full">
         {/* button */}
         <div
-          className={`absolute inset-0 items-center  justify-center bg-gray-800 bg-opacity-50 group-hover:flex  max-md:-translate-x-6  ${
+          className={`absolute inset-0 items-center  justify-center bg-gray-800 bg-opacity-50 group-hover:flex    ${
             activeSong?.title === song.title ? "flex bg-gray-800 bg-opacity-70" : "hidden"
           }`}
         >

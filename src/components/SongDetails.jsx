@@ -52,7 +52,7 @@ export default function SongDetails() {
   if (error || errorData) return <Error />;
 
   return (
-    <div className=" hide-scrollbar h-full w-full  scroll-smooth p-2 text-justify">
+    <div className=" hide-scrollbar hidden h-full w-full scroll-smooth p-2 text-justify md:block">
       <div className="flex  gap-2 ">
         <BsMusicNoteList
           className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"

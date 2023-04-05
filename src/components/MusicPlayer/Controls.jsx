@@ -36,10 +36,10 @@ export default function Controls({
   };
 
   return (
-    <div className="my-3 flex w-full flex-col  items-center justify-center gap-5">
+    <div className="flex w-full flex-row-reverse items-center   md:my-3  md:flex-col md:justify-center md:gap-5">
       {/* above btn */}
 
-      <div className="flex w-full items-center justify-between gap-2 px-2 text-xl  text-light_txt_Main dark:text-dark_txt_Main">
+      <div className="flex w-full items-center justify-between gap-4 px-2 text-xl text-light_txt_Main  dark:text-dark_txt_Main md:gap-2">
         <BsArrowRepeat
           className={`cursor-pointer ${
             repeat
@@ -48,26 +48,14 @@ export default function Controls({
           }`}
           onClick={() => setRepeat((prev) => !prev)}
         />
-        <BsFillSkipStartFill
-          className="cursor-pointer "
-          onClick={handlePrevSong}
-        />
+        <BsFillSkipStartFill className="cursor-pointer " onClick={handlePrevSong} />
         {/* play and pause */}
         {isPlaying ? (
-          <BsFillPauseFill
-            className="cursor-pointer "
-            onClick={handlePlayPause}
-          />
+          <BsFillPauseFill className="cursor-pointer " onClick={handlePlayPause} />
         ) : (
-          <BsFillPlayFill
-            className="cursor-pointer  "
-            onClick={handlePlayPause}
-          />
+          <BsFillPlayFill className="cursor-pointer  " onClick={handlePlayPause} />
         )}
-        <BsFillSkipEndFill
-          className="cursor-pointer "
-          onClick={handleNextSong}
-        />
+        <BsFillSkipEndFill className="cursor-pointer " onClick={handleNextSong} />
         <BsShuffle
           className={`cursor-pointer ${
             shuffle
@@ -80,8 +68,8 @@ export default function Controls({
 
       {/* down btn */}
 
-      <div className="flex w-full items-center justify-around  px-4 py-2   ">
-        <div className="flex items-center gap-3">
+      <div className=" flex w-full items-center  justify-around px-4 py-2   ">
+        <div className="hidden items-center gap-3 md:flex">
           {showFavorites ? (
             <BsFillHeartFill
               className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"

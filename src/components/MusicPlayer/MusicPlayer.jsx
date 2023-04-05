@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Track, Controls, Seekbar, Player } from "../MusicPlayer";
 import { nextSong, prevSong, playPause } from "../../redux/feature/playerSlice";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 export default function MusicPlayer() {
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } = useSelector(
     (state) => state.player
   );
+
+  const isMobile = useMediaQuery("(max-width: 576px)");
+  console.log("isMobile", isMobile);
 
   const [duration, setDuration] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
@@ -50,44 +54,141 @@ export default function MusicPlayer() {
     }
   };
   // console.log(volume);
+
   return (
-    <div className="mx-auto  flex w-72 flex-col items-center justify-center   ">
-      <Track activeSong={activeSong} />
-      <Seekbar
-        value={appTime}
-        min="0"
-        max={duration}
-        onInput={(event) => setSeekTime(event.target.value)}
-        setSeekTime={setSeekTime}
-        appTime={appTime}
-      />
-      <Player
-        activeSong={activeSong}
-        volume={volume}
-        isPlaying={isPlaying}
-        seekTime={seekTime}
-        repeat={repeat}
-        currentIndex={currentIndex}
-        onEnded={handleNextSong}
-        onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
-        onLoadedData={(event) => setDuration(event.target.duration)}
-      />
-      <Controls
-        isPlaying={isPlaying}
-        // activeSong={activeSong}
-        isActive={isActive}
-        repeat={repeat}
-        setRepeat={setRepeat}
-        shuffle={shuffle}
-        setShuffle={setShuffle}
-        currentSongs={currentSongs}
-        handlePlayPause={handlePlayPause}
-        handlePrevSong={handlePrevSong}
-        handleNextSong={handleNextSong}
-        onChange={(event) => setVolume(event.target.value)}
-        setVolume={setVolume}
-        value={volume}
-      />
+    <div className="mx-auto flex  w-full flex-col items-center justify-center md:w-72   ">
+      {isMobile && (
+        <div className="h-max w-full  text-red-400 backdrop-blur-3xl">
+          <div className="mx-3 flex flex-row items-center justify-between ">
+            <div className="">
+              <Track activeSong={activeSong} />
+            </div>
+            <div className="w-4/5">
+              <Seekbar
+                value={appTime}
+                min="0"
+                max={duration}
+                onInput={(event) => setSeekTime(event.target.value)}
+                setSeekTime={setSeekTime}
+                appTime={appTime}
+              />
+              <Player
+                activeSong={activeSong}
+                volume={volume}
+                isPlaying={isPlaying}
+                seekTime={seekTime}
+                repeat={repeat}
+                currentIndex={currentIndex}
+                onEnded={handleNextSong}
+                onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
+                onLoadedData={(event) => setDuration(event.target.duration)}
+              />
+              <Controls
+                isPlaying={isPlaying}
+                isActive={isActive}
+                repeat={repeat}
+                setRepeat={setRepeat}
+                shuffle={shuffle}
+                setShuffle={setShuffle}
+                currentSongs={currentSongs}
+                handlePlayPause={handlePlayPause}
+                handlePrevSong={handlePrevSong}
+                handleNextSong={handleNextSong}
+                onChange={(event) => setVolume(event.target.value)}
+                setVolume={setVolume}
+                value={volume}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+      {!isMobile && (
+        <div>
+          <Track activeSong={activeSong} />
+          <Seekbar
+            value={appTime}
+            min="0"
+            max={duration}
+            onInput={(event) => setSeekTime(event.target.value)}
+            setSeekTime={setSeekTime}
+            appTime={appTime}
+          />
+          <Player
+            activeSong={activeSong}
+            volume={volume}
+            isPlaying={isPlaying}
+            seekTime={seekTime}
+            repeat={repeat}
+            currentIndex={currentIndex}
+            onEnded={handleNextSong}
+            onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
+            onLoadedData={(event) => setDuration(event.target.duration)}
+          />
+          <Controls
+            isPlaying={isPlaying}
+            // activeSong={activeSong}
+            isActive={isActive}
+            repeat={repeat}
+            setRepeat={setRepeat}
+            shuffle={shuffle}
+            setShuffle={setShuffle}
+            currentSongs={currentSongs}
+            handlePlayPause={handlePlayPause}
+            handlePrevSong={handlePrevSong}
+            handleNextSong={handleNextSong}
+            onChange={(event) => setVolume(event.target.value)}
+            setVolume={setVolume}
+            value={volume}
+          />
+        </div>
+      )}
     </div>
   );
+
+  // if (isMobile) {
+  //   return <div>ali</div>;
+  // } else {
+  //   return (
+  //     <div>
+  //       <div className="mx-auto  flex w-72 flex-col items-center justify-center   ">
+  // <Track activeSong={activeSong} />
+  // <Seekbar
+  //   value={appTime}
+  //   min="0"
+  //   max={duration}
+  //   onInput={(event) => setSeekTime(event.target.value)}
+  //   setSeekTime={setSeekTime}
+  //   appTime={appTime}
+  // />
+  // <Player
+  //   activeSong={activeSong}
+  //   volume={volume}
+  //   isPlaying={isPlaying}
+  //   seekTime={seekTime}
+  //   repeat={repeat}
+  //   currentIndex={currentIndex}
+  //   onEnded={handleNextSong}
+  //   onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
+  //   onLoadedData={(event) => setDuration(event.target.duration)}
+  // />
+  // <Controls
+  //   isPlaying={isPlaying}
+  //   // activeSong={activeSong}
+  //   isActive={isActive}
+  //   repeat={repeat}
+  //   setRepeat={setRepeat}
+  //   shuffle={shuffle}
+  //   setShuffle={setShuffle}
+  //   currentSongs={currentSongs}
+  //   handlePlayPause={handlePlayPause}
+  //   handlePrevSong={handlePrevSong}
+  //   handleNextSong={handleNextSong}
+  //   onChange={(event) => setVolume(event.target.value)}
+  //   setVolume={setVolume}
+  //   value={volume}
+  // />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 }

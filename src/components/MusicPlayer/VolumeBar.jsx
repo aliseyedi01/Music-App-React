@@ -1,32 +1,28 @@
-import {
-  BsFillVolumeUpFill,
-  BsVolumeDownFill,
-  BsFillVolumeMuteFill,
-} from "react-icons/bs";
+import { BsFillVolumeUpFill, BsVolumeDownFill, BsFillVolumeMuteFill } from "react-icons/bs";
 export default function VolumeBar({ value, onChange, setVolume }) {
   // console.log(value);
   return (
-    <div className="hidden flex-1 items-center justify-end lg:flex">
+    <div className=" flex w-full flex-1 items-center justify-between   md:justify-end lg:flex">
       {(() => {
         switch (true) {
           case value === 0:
             return (
               <BsFillVolumeMuteFill
-                className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
+                className="inline-block cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
                 onClick={() => setVolume(1)}
               />
             );
           case value > 0 && value <= 0.5:
             return (
               <BsVolumeDownFill
-                className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
+                className="inline-block cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
                 onClick={() => setVolume(0)}
               />
             );
           case value > 0.5 && value <= 1:
             return (
               <BsFillVolumeUpFill
-                className="cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
+                className="inline-block  cursor-pointer text-xl text-light_txt_Main dark:text-dark_txt_Main"
                 onClick={() => setVolume(0)}
               />
             );
@@ -41,7 +37,7 @@ export default function VolumeBar({ value, onChange, setVolume }) {
       })()}
       <input
         type="range"
-        className="h-1 w-24"
+        className="h-1 w-16 md:w-24"
         step="any"
         value={value}
         min="0"
