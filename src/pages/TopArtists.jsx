@@ -43,7 +43,7 @@ export default function TopArtists() {
         </h2>
         <Navigation />
       </div>
-      <div className="hide-scrollbar grid h-full w-full grid-cols-3 justify-center justify-items-center overflow-y-scroll ">
+      <div className="hide-scrollbar grid h-full w-full grid-cols-2 justify-center justify-items-center overflow-y-scroll md:grid-cols-3 ">
         {data?.tracks?.map((artist, i) => (
           <Link key={i} to={`/artists/${artist?.artists[0].adamid}`}>
             <div
@@ -51,11 +51,13 @@ export default function TopArtists() {
               className="my-2 flex h-full w-36 flex-col items-center justify-center"
             >
               {imageLoadingStates[i] && (
-                <div className="h-32 w-32 animate-pulse rounded-full bg-blue-700 dark:bg-slate-600" />
+                <div className="h-28 w-28 animate-pulse rounded-full bg-blue-700 dark:bg-slate-600 md:h-32 md:w-32" />
               )}
               <div
                 className={
-                  imageLoadingStates[i] ? "hidden" : "h-32 w-32 overflow-hidden rounded-full"
+                  imageLoadingStates[i]
+                    ? "hidden"
+                    : "h-28 w-28 overflow-hidden rounded-full md:h-32 md:w-32"
                 }
               >
                 <img
@@ -64,7 +66,7 @@ export default function TopArtists() {
                   className={
                     imageLoadingStates[i]
                       ? "hidden"
-                      : "h-32 w-32 transform overflow-hidden rounded-full shadow-md transition-transform duration-700 hover:scale-125"
+                      : "h-28 w-28 transform overflow-hidden rounded-full shadow-md transition-transform duration-700 hover:scale-125 md:h-32 md:w-32"
                   }
                   onLoad={() => handleImageLoad(i)}
                   onError={() =>
