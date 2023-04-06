@@ -56,9 +56,9 @@ export default function MusicPlayer() {
   // console.log(volume);
 
   return (
-    <div className="mx-auto flex  w-full flex-col items-center justify-center md:w-72   ">
+    <div className="mx-auto flex w-full  flex-col items-center justify-center  md:w-72   ">
       {isMobile && (
-        <div className="h-max w-full  text-red-400 backdrop-blur-3xl">
+        <div className="h-max w-full py-1  text-red-400 backdrop-blur-3xl">
           <div className="mx-3 flex flex-row items-center justify-between ">
             <div className="">
               <Track activeSong={activeSong} />
