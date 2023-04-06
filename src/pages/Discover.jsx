@@ -37,7 +37,7 @@ export default function Discover() {
         setGenreTitle={setGenreTitle}
         isFetching={isFetchingListQuery}
       />
-      <div className=" grid  grid-cols-2 gap-4 p-2 md:grid-cols-3 md:gap-8 ">
+      <div className=" grid  grid-cols-2 place-items-center gap-4 p-2 md:grid-cols-3 md:gap-8 ">
         {dataGenre?.tracks.map((song, i) => (
           <SongCard
             key={song.key}
