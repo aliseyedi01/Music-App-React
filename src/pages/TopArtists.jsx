@@ -58,10 +58,9 @@ export default function TopArtists() {
           />
         )}
       >
-        >
         <div className=" grid h-full w-full grid-cols-2 justify-center justify-items-center  md:grid-cols-3 ">
           {data?.tracks?.map((artist, i) => (
-            <Link key={i} to={`/artists/${artist?.artists[0].adamid}`}>
+            <Link key={i} to={`/artists/${artist?.artists?.[0].adamid}`}>
               <div
                 ref={registerRef}
                 className="my-2 flex h-full w-36 flex-col items-center justify-center"
@@ -77,7 +76,7 @@ export default function TopArtists() {
                   }
                 >
                   <img
-                    src={!isVisible[i] ? "" : artist.images.background}
+                    src={!isVisible[i] ? "" : artist.images?.background}
                     alt="artists"
                     className={
                       imageLoadingStates[i]
