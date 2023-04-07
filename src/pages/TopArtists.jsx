@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Navigation } from "../components";
 import { useGetSongTrackQuery } from "../redux/services/shazam";
 import useLazyLoadImage from "../hooks/useLazyLoadImage";
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 export default function TopArtists() {
   const { data } = useGetSongTrackQuery();
@@ -43,47 +44,63 @@ export default function TopArtists() {
         </h2>
         <Navigation />
       </div>
-      <div className="hide-scrollbar grid h-full w-full grid-cols-2 justify-center justify-items-center overflow-y-scroll md:grid-cols-3 ">
-        {data?.tracks?.map((artist, i) => (
-          <Link key={i} to={`/artists/${artist?.artists[0].adamid}`}>
-            <div
-              ref={registerRef}
-              className="my-2 flex h-full w-36 flex-col items-center justify-center"
-            >
-              {imageLoadingStates[i] && (
-                <div className="h-28 w-28 animate-pulse rounded-full bg-blue-700 dark:bg-slate-600 md:h-32 md:w-32" />
-              )}
+      <Scrollbars
+        autoHide
+        autoHideTimeout={3000}
+        autoHideDuration={500}
+        thumbMinSize={10}
+        thumbSize={150}
+        renderThumbVertical={({ style, ...props }) => (
+          <div
+            className=" rounded-md bg-indigo-500 hover:bg-indigo-600 dark:bg-gray-400 dark:hover:bg-gray-500"
+            style={{ ...style }}
+            {...props}
+          />
+        )}
+      >
+        >
+        <div className=" grid h-full w-full grid-cols-2 justify-center justify-items-center  md:grid-cols-3 ">
+          {data?.tracks?.map((artist, i) => (
+            <Link key={i} to={`/artists/${artist?.artists[0].adamid}`}>
               <div
-                className={
-                  imageLoadingStates[i]
-                    ? "hidden"
-                    : "h-28 w-28 overflow-hidden rounded-full md:h-32 md:w-32"
-                }
+                ref={registerRef}
+                className="my-2 flex h-full w-36 flex-col items-center justify-center"
               >
-                <img
-                  src={!isVisible[i] ? "" : artist.images.background}
-                  alt="artists"
+                {imageLoadingStates[i] && (
+                  <div className="h-28 w-28 animate-pulse rounded-full bg-blue-700 dark:bg-slate-600 md:h-32 md:w-32" />
+                )}
+                <div
                   className={
                     imageLoadingStates[i]
                       ? "hidden"
-                      : "h-28 w-28 transform overflow-hidden rounded-full shadow-md transition-transform duration-700 hover:scale-125 md:h-32 md:w-32"
+                      : "h-28 w-28 overflow-hidden rounded-full md:h-32 md:w-32"
                   }
-                  onLoad={() => handleImageLoad(i)}
-                  onError={() =>
-                    setImageLoadingStates((prevStates) => ({
-                      ...prevStates,
-                      [i]: { ...prevStates[i], hasError: true },
-                    }))
-                  }
-                />
+                >
+                  <img
+                    src={!isVisible[i] ? "" : artist.images.background}
+                    alt="artists"
+                    className={
+                      imageLoadingStates[i]
+                        ? "hidden"
+                        : "h-28 w-28 transform overflow-hidden rounded-full shadow-md transition-transform duration-700 hover:scale-125 md:h-32 md:w-32"
+                    }
+                    onLoad={() => handleImageLoad(i)}
+                    onError={() =>
+                      setImageLoadingStates((prevStates) => ({
+                        ...prevStates,
+                        [i]: { ...prevStates[i], hasError: true },
+                      }))
+                    }
+                  />
+                </div>
+                <p className="mt-2 w-32 truncate text-center font-Montserrat text-sm font-semibold text-light_txt_Main dark:text-dark_txt_Main">
+                  {artist.subtitle}
+                </p>
               </div>
-              <p className="mt-2 w-32 truncate text-center font-Montserrat text-sm font-semibold text-light_txt_Main dark:text-dark_txt_Main">
-                {artist.subtitle}
-              </p>
-            </div>
-          </Link>
-        ))}
-      </div>
+            </Link>
+          ))}
+        </div>
+      </Scrollbars>
     </div>
   );
 }

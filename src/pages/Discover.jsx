@@ -1,5 +1,6 @@
 import { Loading, SongCard, Error, SelectGenre } from "../components";
 import { useSelector } from "react-redux";
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 import {
   useGetSongListQuery,
@@ -30,28 +31,43 @@ export default function Discover() {
   // if (errorGenre) return <Error />;
 
   return (
-    <div className="hide-scrollbar h-full w-full  overflow-y-scroll bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
+    <div className=" h-full w-full   bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
       <SelectGenre
         dataListGenre={dataListGenre}
         genreTitle={genreTitle}
         setGenreTitle={setGenreTitle}
         isFetching={isFetchingListQuery}
       />
-      <div className=" grid  grid-cols-2 place-items-center gap-4 p-2 md:grid-cols-3 md:gap-8 ">
-        {dataGenre?.tracks.map((song, i) => (
-          <SongCard
-            key={song.key}
-            i={i}
-            song={song}
-            data={dataGenre}
-            isPlaying={isPlaying}
-            activeSong={activeSong}
-            isFetching={isFetchingSongByGenre}
-            errorGenre={errorGenre}
-            loadingGenre={loadingGenre}
+      <Scrollbars
+        autoHide
+        autoHideTimeout={3000}
+        autoHideDuration={500}
+        thumbMinSize={10}
+        thumbSize={150}
+        renderThumbVertical={({ style, ...props }) => (
+          <div
+            className=" rounded-md bg-indigo-500 hover:bg-indigo-600 dark:bg-gray-400 dark:hover:bg-gray-500"
+            style={{ ...style }}
+            {...props}
           />
-        ))}
-      </div>
+        )}
+      >
+        <div className=" grid  grid-cols-2 place-items-center gap-4 p-2 md:grid-cols-3 md:gap-8 ">
+          {dataGenre?.tracks.map((song, i) => (
+            <SongCard
+              key={song.key}
+              i={i}
+              song={song}
+              data={dataGenre}
+              isPlaying={isPlaying}
+              activeSong={activeSong}
+              isFetching={isFetchingSongByGenre}
+              errorGenre={errorGenre}
+              loadingGenre={loadingGenre}
+            />
+          ))}
+        </div>
+      </Scrollbars>
     </div>
   );
 }
