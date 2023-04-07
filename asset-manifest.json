@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/Music-App-React/static/css/main.e570101d.css",
-    "main.js": "/Music-App-React/static/js/main.c85a00c6.js",
-    "static/js/415.5546c0dc.chunk.js": "/Music-App-React/static/js/415.5546c0dc.chunk.js",
-    "static/js/297.7233ba67.chunk.js": "/Music-App-React/static/js/297.7233ba67.chunk.js",
-    "static/js/952.a1dd1f91.chunk.js": "/Music-App-React/static/js/952.a1dd1f91.chunk.js",
-    "static/js/565.d79ef053.chunk.js": "/Music-App-React/static/js/565.d79ef053.chunk.js",
-    "static/js/832.77b5b273.chunk.js": "/Music-App-React/static/js/832.77b5b273.chunk.js",
+    "main.css": "/Music-App-React/static/css/main.e6fca3f5.css",
+    "main.js": "/Music-App-React/static/js/main.ae8783d6.js",
+    "static/js/415.88673e23.chunk.js": "/Music-App-React/static/js/415.88673e23.chunk.js",
+    "static/js/297.05139f48.chunk.js": "/Music-App-React/static/js/297.05139f48.chunk.js",
+    "static/js/952.025cc862.chunk.js": "/Music-App-React/static/js/952.025cc862.chunk.js",
+    "static/js/565.1cd22ea6.chunk.js": "/Music-App-React/static/js/565.1cd22ea6.chunk.js",
+    "static/js/832.75ab26f3.chunk.js": "/Music-App-React/static/js/832.75ab26f3.chunk.js",
+    "static/js/889.9da59751.chunk.js": "/Music-App-React/static/js/889.9da59751.chunk.js",
     "static/media/music.png": "/Music-App-React/static/media/music.03357edc349a5ddb09c0.png",
     "static/media/defaultPlay.jpg": "/Music-App-React/static/media/defaultPlay.e5ba5b5e1b4496de9f69.jpg",
     "index.html": "/Music-App-React/index.html",
-    "main.e570101d.css.map": "/Music-App-React/static/css/main.e570101d.css.map",
-    "main.c85a00c6.js.map": "/Music-App-React/static/js/main.c85a00c6.js.map",
-    "415.5546c0dc.chunk.js.map": "/Music-App-React/static/js/415.5546c0dc.chunk.js.map",
-    "297.7233ba67.chunk.js.map": "/Music-App-React/static/js/297.7233ba67.chunk.js.map",
-    "952.a1dd1f91.chunk.js.map": "/Music-App-React/static/js/952.a1dd1f91.chunk.js.map",
-    "565.d79ef053.chunk.js.map": "/Music-App-React/static/js/565.d79ef053.chunk.js.map",
-    "832.77b5b273.chunk.js.map": "/Music-App-React/static/js/832.77b5b273.chunk.js.map"
+    "main.e6fca3f5.css.map": "/Music-App-React/static/css/main.e6fca3f5.css.map",
+    "main.ae8783d6.js.map": "/Music-App-React/static/js/main.ae8783d6.js.map",
+    "415.88673e23.chunk.js.map": "/Music-App-React/static/js/415.88673e23.chunk.js.map",
+    "297.05139f48.chunk.js.map": "/Music-App-React/static/js/297.05139f48.chunk.js.map",
+    "952.025cc862.chunk.js.map": "/Music-App-React/static/js/952.025cc862.chunk.js.map",
+    "565.1cd22ea6.chunk.js.map": "/Music-App-React/static/js/565.1cd22ea6.chunk.js.map",
+    "832.75ab26f3.chunk.js.map": "/Music-App-React/static/js/832.75ab26f3.chunk.js.map",
+    "889.9da59751.chunk.js.map": "/Music-App-React/static/js/889.9da59751.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e570101d.css",
-    "static/js/main.c85a00c6.js"
+    "static/css/main.e6fca3f5.css",
+    "static/js/main.ae8783d6.js"
   ]
 }
