@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+## Project Music App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Music app practice for learning React
 
-## Available Scripts
+## Color Reference
 
-In the project directory, you can run:
+| Color              | Hex                                                              |
+| ------------------ | ---------------------------------------------------------------- |
+| DarkMode_bg_Main   | ![#212121](https://via.placeholder.com/10/2e2d2d?text=+) #212121 |
+| LightMode_bg_Main  | ![#e9e7e7](https://via.placeholder.com/10/e9e7e7?text=+) #e9e7e7 |
+| DarkMode_txt_Main  | ![#dca54c](https://via.placeholder.com/10/dca54c?text=+) #dca54c |
+| LightMode_txt_Main | ![#632c3b](https://via.placeholder.com/10/7d394b?text=+) #632c3b |
 
-### `npm start`
+## Fonts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Lemon
+- Lobster
+- Ubuntu
+- Montserrat
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
 
-### `npm test`
+[Music APP React](https://aliseyedi01.github.io/Music-App-React/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+### Desktop
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![image](https://user-images.githubusercontent.com/118107025/230769335-06665f4e-7194-492a-bce2-84a576a76d9a.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://user-images.githubusercontent.com/118107025/230769256-1be45913-4243-46ad-b04a-51169aaa909d.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Mobile
 
-### `npm run eject`
+![image](https://user-images.githubusercontent.com/118107025/230769282-742bd826-2c8c-4d49-ac65-4965e1b3e4ef.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![image](https://user-images.githubusercontent.com/118107025/230769300-fc4c4310-5dba-48e4-8a93-2a04956051f8.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Listen to songs on the app
+- Light/dark mode toggle
+- Responsive Design
+- Fullscreen mode
+- Music Player
+- Search Top Charts
+- Selection Music by genre
+- Access the song's lyrics
+- Access the artist's page
+- User-friendly interface and visually pleasing design.
+- Access to a vast music library through RapidAPI.
+- Streamlined state management with Redux Toolkit.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies used
 
-## Learn More
+- Create React App
+- TailwindCss
+- Redux Toolkit
+- Rapid API
+- GitHub-Page
+- React-Router
+- Custom Hooks
+- React tooltip
+- React Icon
+- lazy loading
+- Image loading
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Environment Variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run this project, you will need to add the following environment variables to your .env file
 
-### Code Splitting
+`API_KEY`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`REACT_APP_API_KEY_TWO`
 
-### Analyzing the Bundle Size
+## Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Clone the project
 
-### Making a Progressive Web App
+```bash
+  https://github.com/aliseyedi01/Music-App-React.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. Go to the project directory
 
-### Advanced Configuration
+```bash
+  cd Music-App-React
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Install dependencies
 
-### Deployment
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. Start the server
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  npm run start
+```
