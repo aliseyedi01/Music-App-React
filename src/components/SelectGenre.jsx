@@ -15,16 +15,6 @@ export default function SelectGenre({ dataListGenre, genreTitle, setGenreTitle, 
     setTextGenre(e.target.options[e.target.selectedIndex].textContent);
   }
 
-  console.log(genres);
-
-  //   const genreTitle = "pop";
-  //   const [genreTitle, setGenreTitle] = useState("pop");
-  console.log("genreID", genreTitle);
-  // console.log(genreTitle.name);
-  // console.log(genreTitle.id);
-  console.log("textGenre", textGenre);
-
-  // isFetching = true;
   return (
     <>
       <div className="mt-2 mb-4 flex w-full flex-col-reverse  items-center justify-between gap-2 px-2 md:mt-4 md:mb-10 md:flex-row ">
