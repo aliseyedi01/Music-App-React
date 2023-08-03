@@ -6,7 +6,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 
 export default function MusicPlayer() {
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } = useSelector(
-    (state) => state.player
+    (state) => state.player,
   );
 
   const isMobile = useMediaQuery("(max-width: 576px)");
@@ -142,4 +142,4 @@ export default function MusicPlayer() {
       )}
     </div>
   );
-
+}

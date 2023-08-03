@@ -10,6 +10,7 @@ import SearchBar from "./SearchBar";
 import SelectGenre from "./SelectGenre";
 import Navigation from "./Navigation";
 import NavBottom from "./NavBottom";
+import DarkModeBtn from "./Button/DarkModeBtn";
 export {
   Sidebar,
   SongCard,
@@ -23,4 +24,5 @@ export {
   SelectGenre,
   Navigation,
   NavBottom,
+  DarkModeBtn,
 };

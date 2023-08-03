@@ -1,17 +1,31 @@
 import { useState, useEffect } from "react";
 
 const useDarkMode = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
 
   // store dark mode in local storage
-  useEffect(() => {
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(isDarkMode);
-  }, []);
+  // useEffect(() => {
+  //   const isDarkMode = localStorage.getItem("darkMode") === "true";
+  //   setDarkMode(isDarkMode);
+  // }, []);
+
+  // // change mode with changes theme
+  // useEffect(() => {
+  //   localStorage.setItem("darkMode", darkMode);
+  //   if (darkMode) {
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  // }, [darkMode]);
+  const [darkMode, setDarkMode] = useState(() => {
+    const isDarkMode = localStorage.getItem("darkMode");
+    return isDarkMode === "true";
+  });
 
   // change mode with changes theme
   useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
+    localStorage.setItem("darkMode", darkMode.toString());
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
