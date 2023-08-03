@@ -10,7 +10,6 @@ export default function RelatedSong({
   data,
   isFetching,
 }) {
-  // console.log("right", data);
   return (
     <div className="flex w-full flex-col">
       <h1 className="mt-2 font-Lemon text-base text-light_txt_Main dark:text-dark_txt_Main">

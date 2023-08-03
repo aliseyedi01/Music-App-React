@@ -1,7 +1,6 @@
 import { Loading, SongCard, Error, SelectGenre } from "../components";
 import { useSelector } from "react-redux";
 import { Scrollbars } from "react-custom-scrollbars-2";
-
 import {
   useGetSongListQuery,
   useGetSongsByGenreQuery,
@@ -10,8 +9,6 @@ import {
 import { useState } from "react";
 
 export default function Discover() {
-  // const { data, isFetching, error } = useGetSongTrackQuery();
-  // console.log(data);
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
   const { data: dataListGenre, isFetching: isFetchingListQuery } = useGetSongListQuery();
@@ -23,12 +20,6 @@ export default function Discover() {
     error: errorGenre,
     isLoading: loadingGenre,
   } = useGetSongsByGenreQuery(genreTitle);
-
-  // console.log(loadingGenre);
-  // console.log(isFetchingSongByGenre);
-
-  // if (isFetchingSongByGenre) return <Loading />;
-  // if (errorGenre) return <Error />;
 
   return (
     <div className=" h-full w-full   bg-light_bg_Main py-3 dark:bg-dark_bg_Main">

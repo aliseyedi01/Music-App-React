@@ -1,6 +1,5 @@
 import React from "react";
 import PlayPause from "./PlayPause";
-// import { Link } from "react-router-dom";
 
 export default function SongBar({
   song,
@@ -12,8 +11,6 @@ export default function SongBar({
   handlePlayClick,
   isFetching,
 }) {
-  // isFetching = true;
-  console.log(isFetching);
   return (
     <div className="mt-3 flex w-full items-center justify-evenly ">
       <h3 className="mr-2 text-base font-bold text-light_txt_Main dark:text-dark_txt_Main">

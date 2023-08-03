@@ -13,11 +13,6 @@ const useLazyLoadImage = (count) => {
               entries.forEach((entry) => {
                 if (entry.isIntersecting && entry.target instanceof Element) {
                   setIsVisible((prev) => ({ ...prev, [index]: true }));
-                  // setIsVisible((prev) => {
-                  //   const newState = [...prev];
-                  //   newState[index] = true;
-                  //   return newState;
-                  // });
                   observer.unobserve(entry.target);
                 }
               });
@@ -26,7 +21,7 @@ const useLazyLoadImage = (count) => {
               root: null,
               rootMargin: "50px 0px 0px 0px",
               threshold: 0.01,
-            }
+            },
           );
           observer.observe(ref);
         }

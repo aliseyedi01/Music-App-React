@@ -27,9 +27,6 @@ export default function Player({
     ref.current.currentTime = seekTime;
   }, [seekTime]);
 
-  // console.log(ref);
-  // console.log(activeSong?.hub?.actions?.[1]?.uri);
-
   return (
     <audio
       ref={ref}

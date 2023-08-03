@@ -1,16 +1,11 @@
-// import React, { useState } from "react";
-// import { useGetSongListQuery } from "../redux/services/shazam";
-
 import { useState } from "react";
 
 export default function SelectGenre({ dataListGenre, genreTitle, setGenreTitle, isFetching }) {
-  //   const { data } = useGetSongListQuery();
   const [textGenre, setTextGenre] = useState("Pop");
 
   const genres = dataListGenre?.global?.genres;
 
   function handleGetData(e) {
-    console.log(e);
     setGenreTitle(e.target.value);
     setTextGenre(e.target.options[e.target.selectedIndex].textContent);
   }

@@ -10,24 +10,10 @@ export default function Search() {
 
   const SearchInputHandle = (e) => {
     setSearchTerm(e.target.value);
-    console.log(searchTerm);
   };
-
-  //   const searchHandle = () => {
-  //     setSearchTerm("");
-  //   };
-
-  //   const handleEnterKey = (event) => {
-  //     if (event.key === "Enter") {
-  //       setSearchTerm("");
-  //     }
-  //   };
-
-  //   console.log(searchTerm, typeof searchTerm);
 
   let { data, isFetching, isError } = useGetSongsBySearchQuery(searchTerm);
 
-  //   console.log(data);
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
   return (

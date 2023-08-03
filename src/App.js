@@ -10,7 +10,6 @@ const ArtistDetail = lazy(() => import("./pages/ArtistDetail"));
 
 function App() {
   const isMobile = useMediaQuery("(max-width: 576px)");
-  // console.log("isMobile", isMobile);
   return (
     <div className=" relative flex h-screen  w-screen  ">
       <NavBottom />

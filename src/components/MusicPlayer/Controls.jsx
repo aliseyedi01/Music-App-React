@@ -28,7 +28,6 @@ export default function Controls({
   handlePrevSong,
   handleNextSong,
 }) {
-  // console.log(activeSong);
   const [showFavorites, setShowFavorites] = useState(true);
 
   const handleFavorites = () => {

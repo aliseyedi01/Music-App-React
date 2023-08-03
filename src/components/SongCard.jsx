@@ -8,7 +8,7 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
   const dispatch = useDispatch();
 
   const [imageLoadingStates, setImageLoadingStates] = useState(
-    data?.tracks ? Object.fromEntries(data.tracks.map((artist, i) => [i, true])) : {}
+    data?.tracks ? Object.fromEntries(data.tracks.map((artist, i) => [i, true])) : {},
   );
 
   useEffect(() => {
@@ -27,11 +27,6 @@ export default function SongCard({ song, i, data, isPlaying, activeSong, isFetch
   const handleImageLoad = (i) => {
     setImageLoadingStates((prev) => ({ ...prev, [i]: false }));
   };
-
-  // console.log("isFetching ", isFetching);
-  // console.log("loading", imageLoadingStates);
-  // console.log("i", i);
-  // console.log("data?.tracks", data?.tracks);
 
   return (
     <div className="flex h-full w-[9.8rem] cursor-pointer flex-col rounded-lg bg-light_bg_Main bg-opacity-80 p-3 py-3 shadow-2xl backdrop-blur-sm dark:bg-dark_bg_Second  md:w-max ">

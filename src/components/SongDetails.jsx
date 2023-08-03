@@ -9,8 +9,6 @@ export default function SongDetails() {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const songid = activeSong?.key;
-  //   console.log(activeSong);
-  // console.log(songid);
 
   const [showLyric, setShowLyric] = useState(false);
   const [showRelated, setShowRelated] = useState(false);
@@ -28,15 +26,8 @@ export default function SongDetails() {
   // fetch lyrics data
   const { data: songData, isFetching, error: errorData } = useGetSongDetailsQuery({ songid });
 
-  // console.log(songData);
-
-  // const songid1 = "484129036";
-  // console.log(songid1, typeof songid1);
   // fetch related data
   const { data: relatedData, isFetching: isFetchingSongRelated, error } = useGetSongRelatedQuery();
-
-  // console.log(relatedData);
-  // console.log(error);
 
   // click handle
   const handlePlayClick = (song, i) => {
@@ -48,7 +39,6 @@ export default function SongDetails() {
   };
 
   // fetch and error handling
-  // if (isFetching || isFetchingSongRelated) return <Loading title="Searching song details" />;
   if (error || errorData) return <Error />;
 
   return (

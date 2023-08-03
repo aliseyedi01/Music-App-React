@@ -4,9 +4,6 @@ export default function Track({ activeSong }) {
   return (
     <div className="flex w-max flex-1 flex-col items-center justify-start gap-1 md:w-full md:pt-2">
       <div className="flex flex-col gap-2">
-        {/* <p className="self-start truncate text-left text-sm capitalize text-light_txt_Main dark:text-dark_txt_Main">
-          Now Playing
-        </p> */}
         <img
           src={
             activeSong?.images?.coverart ||

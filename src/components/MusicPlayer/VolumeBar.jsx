@@ -1,6 +1,5 @@
 import { BsFillVolumeUpFill, BsVolumeDownFill, BsFillVolumeMuteFill } from "react-icons/bs";
 export default function VolumeBar({ value, onChange, setVolume }) {
-  // console.log(value);
   return (
     <div className=" flex w-full flex-1 items-center justify-between   md:justify-end lg:flex">
       {(() => {

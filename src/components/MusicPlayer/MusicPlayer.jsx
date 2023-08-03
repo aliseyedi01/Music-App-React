@@ -10,7 +10,6 @@ export default function MusicPlayer() {
   );
 
   const isMobile = useMediaQuery("(max-width: 576px)");
-  console.log("isMobile", isMobile);
 
   const [duration, setDuration] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
@@ -53,7 +52,6 @@ export default function MusicPlayer() {
       dispatch(prevSong(currentIndex - 1));
     }
   };
-  // console.log(volume);
 
   return (
     <div className="mx-auto flex w-full  flex-col items-center justify-center  md:w-72   ">
@@ -145,50 +143,3 @@ export default function MusicPlayer() {
     </div>
   );
 
-  // if (isMobile) {
-  //   return <div>ali</div>;
-  // } else {
-  //   return (
-  //     <div>
-  //       <div className="mx-auto  flex w-72 flex-col items-center justify-center   ">
-  // <Track activeSong={activeSong} />
-  // <Seekbar
-  //   value={appTime}
-  //   min="0"
-  //   max={duration}
-  //   onInput={(event) => setSeekTime(event.target.value)}
-  //   setSeekTime={setSeekTime}
-  //   appTime={appTime}
-  // />
-  // <Player
-  //   activeSong={activeSong}
-  //   volume={volume}
-  //   isPlaying={isPlaying}
-  //   seekTime={seekTime}
-  //   repeat={repeat}
-  //   currentIndex={currentIndex}
-  //   onEnded={handleNextSong}
-  //   onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
-  //   onLoadedData={(event) => setDuration(event.target.duration)}
-  // />
-  // <Controls
-  //   isPlaying={isPlaying}
-  //   // activeSong={activeSong}
-  //   isActive={isActive}
-  //   repeat={repeat}
-  //   setRepeat={setRepeat}
-  //   shuffle={shuffle}
-  //   setShuffle={setShuffle}
-  //   currentSongs={currentSongs}
-  //   handlePlayPause={handlePlayPause}
-  //   handlePrevSong={handlePrevSong}
-  //   handleNextSong={handleNextSong}
-  //   onChange={(event) => setVolume(event.target.value)}
-  //   setVolume={setVolume}
-  //   value={volume}
-  // />
-  //       </div>
-  //     </div>
-  //   );
-  // }
-}

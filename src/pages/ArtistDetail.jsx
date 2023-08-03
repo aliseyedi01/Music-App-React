@@ -20,10 +20,6 @@ export default function ArtistDetail() {
     artistsId,
   });
 
-  // console.log(data);
-  // console.log(artist);
-  //   console.log(data?.data[0]?.attributes?.artwork?.url);
-
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
   const dispatch = useDispatch();
@@ -36,8 +32,6 @@ export default function ArtistDetail() {
     dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
   };
-
-  // console.log("left", artistSong);
 
   return (
     <div className="hide-scrollbar relative  flex h-full w-full flex-col overflow-y-scroll  bg-light_bg_Main py-3 text-red-300 dark:bg-dark_bg_Main">
