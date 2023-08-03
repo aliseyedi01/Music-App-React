@@ -1,11 +1,7 @@
-import { Loading, SongCard, Error, SelectGenre } from "../components";
+import { SongCard, SelectGenre } from "../components";
 import { useSelector } from "react-redux";
 import { Scrollbars } from "react-custom-scrollbars-2";
-import {
-  useGetSongListQuery,
-  useGetSongsByGenreQuery,
-  useGetSongTrackQuery,
-} from "../redux/services/shazam";
+import { useGetSongListQuery, useGetSongsByGenreQuery } from "../redux/services/shazam";
 import { useState } from "react";
 
 export default function Discover() {

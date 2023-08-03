@@ -9,14 +9,10 @@ import { useGetArtistDetailsQuery, useGetArtistTopSongsQuery } from "../redux/se
 export default function ArtistDetail() {
   let { artistsId } = useParams();
 
-  const {
-    data,
-    isError,
-    isFetching: isFetchingArtistDetails,
-  } = useGetArtistDetailsQuery({ artistsId });
+  const { data, isFetching: isFetchingArtistDetails } = useGetArtistDetailsQuery({ artistsId });
   let artist = data?.data[0]?.attributes;
 
-  const { data: artistSong, isFetching: isFetchingArtistTopSong } = useGetArtistTopSongsQuery({
+  const { data: artistSong } = useGetArtistTopSongsQuery({
     artistsId,
   });
 
@@ -45,8 +41,8 @@ export default function ArtistDetail() {
           ) : (
             <img
               src={artist?.artwork?.url.replace(/{w}|{h}/gi, "256")}
-              // alt={artist?.name}
               className="h-48 w-48 rounded "
+              alt="artist"
             />
           )}
         </div>
