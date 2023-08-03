@@ -32,9 +32,9 @@ Music app practice for learning React
 
 ### Mobile
 
-![image](https://user-images.githubusercontent.com/118107025/230769282-742bd826-2c8c-4d49-ac65-4965e1b3e4ef.png)
-
-![image](https://user-images.githubusercontent.com/118107025/230769300-fc4c4310-5dba-48e4-8a93-2a04956051f8.png)
+| Mobile                                                                                                           | Mobile                                                                                                           |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| ![image](https://user-images.githubusercontent.com/118107025/230769282-742bd826-2c8c-4d49-ac65-4965e1b3e4ef.png) | ![image](https://user-images.githubusercontent.com/118107025/230769300-fc4c4310-5dba-48e4-8a93-2a04956051f8.png) |
 
 ## Features
 
