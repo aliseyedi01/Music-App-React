@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 // Icons
 import { SiMusicbrainz } from "react-icons/si";
-import { HiHome, HiSearchCircle, HiUserGroup, HiViewGrid, HiSun, HiMoon } from "react-icons/hi";
+import { HiHome, HiSearchCircle, HiUserGroup, HiViewGrid } from "react-icons/hi";
 // Components
 import DarkModeBtn from "./Button/DarkModeBtn";
+
+const links = [
+  { path: "/home", icon: <HiHome className="mr-2" />, text: "Home" },
+  { path: "/discover", icon: <HiViewGrid className="mr-2" />, text: "Discover" },
+  { path: "/search", icon: <HiSearchCircle className="mr-2" />, text: "Search" },
+  { path: "/top-artists", icon: <HiUserGroup className="mr-2" />, text: "Artists" },
+];
 
 export default function Sidebar() {
   return (
@@ -15,30 +22,14 @@ export default function Sidebar() {
 
       <div className="">
         <ul className="flex w-full cursor-pointer flex-col place-items-start gap-2   text-light_txt_Main dark:text-dark_txt_Main  ">
-          <Link to="/home">
-            <li className="flex items-center   text-left font-Lemon  ">
-              <HiHome className="mr-2" />
-              Home
-            </li>
-          </Link>
-          <Link to="/discover">
-            <li className="flex items-center   text-left font-Lemon  ">
-              <HiViewGrid className="mr-2" />
-              Discover
-            </li>
-          </Link>
-          <Link to="/search">
-            <li className="flex items-center   text-left font-Lemon  ">
-              <HiSearchCircle className="mr-2" />
-              Search
-            </li>
-          </Link>
-          <Link to="/top-artists">
-            <li className="flex items-center   text-left font-Lemon  ">
-              <HiUserGroup className="mr-2" />
-              Artists
-            </li>
-          </Link>
+          {links.map((link, index) => (
+            <Link key={index} to={link.path}>
+              <li className="flex items-center text-left font-Lemon">
+                {link.icon}
+                {link.text}
+              </li>
+            </Link>
+          ))}
         </ul>
       </div>
 
