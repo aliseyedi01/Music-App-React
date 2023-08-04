@@ -1,28 +1,13 @@
-import Sidebar from "./Sidebar";
-import Loading from "./Loading";
-import SongCard from "./SongCard";
-import Error from "./Error";
-import MusicPlayer from "./MusicPlayer/MusicPlayer";
-import SongDetails from "./SongDetails";
-import RelatedSong from "./RelatedSong";
-import SongBar from "./SongBar";
-import SearchBar from "./SearchBar";
-import SelectGenre from "./SelectGenre";
-import Navigation from "./Navigation";
-import NavBottom from "./NavBottom";
-import DarkModeBtn from "./Button/DarkModeBtn";
-export {
-  Sidebar,
-  SongCard,
-  Loading,
-  Error,
-  MusicPlayer,
-  SongDetails,
-  RelatedSong,
-  SongBar,
-  SearchBar,
-  SelectGenre,
-  Navigation,
-  NavBottom,
-  DarkModeBtn,
-};
+export { default as Sidebar } from "./Sidebar";
+export { default as Loading } from "./Loading";
+export { default as SongCard } from "./SongCard";
+export { default as Error } from "./Error";
+export { default as MusicPlayer } from "./MusicPlayer/MusicPlayer";
+export { default as SongDetails } from "./SongDetails";
+export { default as RelatedSong } from "./RelatedSong";
+export { default as SongBar } from "./SongBar";
+export { default as SearchBar } from "./SearchBar";
+export { default as SelectGenre } from "./SelectGenre";
+export { default as Navigation } from "./Navigation";
+export { default as NavBottom } from "./NavBottom";
+export { default as DarkModeBtn } from "./Button/DarkModeBtn";

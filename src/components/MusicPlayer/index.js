@@ -1,8 +1,6 @@
-import Controls from "./Controls";
-import MusicPlayer from "./MusicPlayer";
-import Player from "./Player";
-import Seekbar from "./Seekbar";
-import Track from "./Track";
-import VolumeBar from "./VolumeBar";
-
-export { Controls, MusicPlayer, Player, Seekbar, VolumeBar, Track };
+export { default as Controls } from "./Controls";
+export { default as MusicPlayer } from "./MusicPlayer";
+export { default as Player } from "./Player";
+export { default as Seekbar } from "./Seekbar";
+export { default as Track } from "./Track";
+export { default as VolumeBar } from "./VolumeBar";

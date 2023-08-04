@@ -1,7 +1,5 @@
-import Discover from "./Discover";
-import TopArtists from "./TopArtists";
-import ArtistDetail from "./ArtistDetail";
-import Search from "./Search";
-import Home from "./Home";
-
-export { Discover, TopArtists, ArtistDetail, Search, Home };
+export { default as Discover } from "./Discover";
+export { default as TopArtists } from "./TopArtists";
+export { default as ArtistDetail } from "./ArtistDetail";
+export { default as Search } from "./Search";
+export { default as Home } from "./Home";
