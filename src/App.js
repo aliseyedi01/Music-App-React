@@ -13,11 +13,9 @@ function App() {
   return (
     <div className=" relative flex h-screen  w-screen  ">
       <NavBottom />
-
       <div className="hidden h-full w-4/6 md:block md:w-[12%]">
         <Sidebar />
       </div>
-
       <div className="hide-scroll hide-scrollbar z-20 w-full  overflow-y-scroll md:w-[60%] ">
         <Routes>
           <Route
@@ -70,7 +68,6 @@ function App() {
           />
         </Routes>
       </div>
-
       <div
         className={
           isMobile
