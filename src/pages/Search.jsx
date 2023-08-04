@@ -1,7 +1,10 @@
+// react
 import React from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+// components
 import { Error, Navigation, SearchBar, SongCard } from "../components";
+// redux
+import { useSelector } from "react-redux";
 import { useGetSongsBySearchQuery } from "../redux/services/shazam";
 
 export default function Search() {

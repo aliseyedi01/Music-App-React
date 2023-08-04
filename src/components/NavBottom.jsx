@@ -1,6 +1,9 @@
+// react
 import React from "react";
-import { HiHome, HiSearchCircle, HiUserGroup, HiViewGrid, HiSun, HiMoon } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
+// icons
+import { HiHome, HiSearchCircle, HiUserGroup, HiViewGrid, HiSun, HiMoon } from "react-icons/hi";
+// custom hooks
 import useDarkMode from "../hooks/useDarkMode";
 
 const navLinks = [

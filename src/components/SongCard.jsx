@@ -1,8 +1,11 @@
-import { useDispatch } from "react-redux";
-import { FaPlayCircle, FaPauseCircle } from "react-icons/fa";
-import { playPause, setActiveSong } from "../redux/feature/playerSlice";
+// react
 import { useEffect, useState } from "react";
+// icons
+import { FaPlayCircle, FaPauseCircle } from "react-icons/fa";
 import DefaultPlayMusic from "../../src/assets/image/defaultPlay.jpg";
+// redux
+import { useDispatch } from "react-redux";
+import { playPause, setActiveSong } from "../redux/feature/playerSlice";
 
 export default function SongCard({ song, i, data, isPlaying, activeSong, isFetching }) {
   const dispatch = useDispatch();

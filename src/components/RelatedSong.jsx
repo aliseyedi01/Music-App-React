@@ -1,3 +1,4 @@
+// components
 import SongBar from "./SongBar";
 
 export default function RelatedSong({

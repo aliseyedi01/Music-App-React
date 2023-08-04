@@ -1,6 +1,9 @@
-import { SongDetails, Sidebar, MusicPlayer, Loading, NavBottom } from "./components";
+// react
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
+// component
+import { SongDetails, Sidebar, MusicPlayer, Loading, NavBottom } from "./components";
+// Custom hooks
 import useMediaQuery from "./hooks/useMediaQuery";
 
 const Home = lazy(() => import("./pages/Home"));

@@ -1,7 +1,10 @@
+// react
 import React from "react";
-import { SiMusicbrainz } from "react-icons/si";
-import { Navigation } from "../components";
 import { Scrollbars } from "react-custom-scrollbars-2";
+// icons
+import { SiMusicbrainz } from "react-icons/si";
+// components
+import { Navigation } from "../components";
 
 export default function Home() {
   return (

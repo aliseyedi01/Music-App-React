@@ -1,6 +1,9 @@
+// react
 import React from "react";
 import { useParams } from "react-router-dom";
+// components
 import { Navigation, RelatedSong } from "../components";
+// redux
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveSong, playPause } from "../redux/feature/playerSlice";
 

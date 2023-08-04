@@ -1,9 +1,13 @@
-import { useSelector, useDispatch } from "react-redux";
-import { Error, Loading, RelatedSong } from "../components";
-import { setActiveSong, playPause } from "../redux/feature/playerSlice";
+// react
 import { useState } from "react";
-import { useGetSongDetailsQuery, useGetSongRelatedQuery } from "../redux/services/shazam";
+// components
+import { Error, RelatedSong } from "../components";
+// icons
 import { BsMusicNoteBeamed, BsMusicNoteList } from "react-icons/bs";
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { setActiveSong, playPause } from "../redux/feature/playerSlice";
+import { useGetSongDetailsQuery, useGetSongRelatedQuery } from "../redux/services/shazam";
 
 export default function SongDetails() {
   const dispatch = useDispatch();
@@ -24,7 +28,7 @@ export default function SongDetails() {
   };
 
   // fetch lyrics data
-  const { data: songData, isFetching, error: errorData } = useGetSongDetailsQuery({ songid });
+  const { data: songData, error: errorData } = useGetSongDetailsQuery({ songid });
 
   // fetch related data
   const { data: relatedData, isFetching: isFetchingSongRelated, error } = useGetSongRelatedQuery();

@@ -1,7 +1,9 @@
+// react
 import React from "react";
-import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
-import { Tooltip } from "react-tooltip";
 import { useNavigate } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
+// icons
+import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
 
 export default function Navigate() {
   const navigate = useNavigate();

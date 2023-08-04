@@ -1,4 +1,6 @@
+// react
 import React from "react";
+// components
 import PlayPause from "./PlayPause";
 
 export default function SongBar({

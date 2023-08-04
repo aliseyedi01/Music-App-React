@@ -1,8 +1,12 @@
+// react
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+// components
 import { Track, Controls, Seekbar, Player } from "../MusicPlayer";
-import { nextSong, prevSong, playPause } from "../../redux/feature/playerSlice";
+// custom hooks
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { useSelector, useDispatch } from "react-redux";
+// redux
+import { nextSong, prevSong, playPause } from "../../redux/feature/playerSlice";
 
 export default function MusicPlayer() {
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } = useSelector(

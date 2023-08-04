@@ -1,8 +1,11 @@
-import { SongCard, SelectGenre } from "../components";
-import { useSelector } from "react-redux";
-import { Scrollbars } from "react-custom-scrollbars-2";
-import { useGetSongListQuery, useGetSongsByGenreQuery } from "../redux/services/shazam";
+// react
 import { useState } from "react";
+import { Scrollbars } from "react-custom-scrollbars-2";
+// components
+import { SongCard, SelectGenre } from "../components";
+// redux
+import { useSelector } from "react-redux";
+import { useGetSongListQuery, useGetSongsByGenreQuery } from "../redux/services/shazam";
 
 export default function Discover() {
   const { activeSong, isPlaying } = useSelector((state) => state.player);

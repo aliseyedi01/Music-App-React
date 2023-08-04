@@ -1,4 +1,6 @@
+// react
 import { useState } from "react";
+// icons
 import {
   BsArrowRepeat,
   BsFillSkipEndFill,
@@ -9,7 +11,7 @@ import {
   BsHeart,
   BsFillHeartFill,
 } from "react-icons/bs";
-
+// components
 import VolumeBar from "./VolumeBar";
 
 export default function Controls({

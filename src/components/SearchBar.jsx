@@ -1,4 +1,6 @@
+// react
 import React from "react";
+// icons
 import { FiSearch } from "react-icons/fi";
 
 export default function SearchBar({ SearchInputHandle, searchHandle, handleEnterKey, searchTerm }) {

@@ -1,9 +1,13 @@
+// react
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Navigation } from "../components";
-import { useGetSongTrackQuery } from "../redux/services/shazam";
-import useLazyLoadImage from "../hooks/useLazyLoadImage";
 import { Scrollbars } from "react-custom-scrollbars-2";
+// components
+import { Navigation } from "../components";
+// custom hook
+import useLazyLoadImage from "../hooks/useLazyLoadImage";
+// redux
+import { useGetSongTrackQuery } from "../redux/services/shazam";
 
 export default function TopArtists() {
   const { data } = useGetSongTrackQuery();
