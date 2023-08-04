@@ -30,9 +30,9 @@ export default function TopArtists() {
   };
 
   return (
-    <div className="  flex h-full w-full flex-col   bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
+    <div className="flex h-full w-full flex-col bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
       <div className="flex items-center justify-between px-4">
-        <h2 className="font-Montserrat text-2xl text-light_txt_Main dark:text-dark_txt_Main ">
+        <h2 className="font-Montserrat text-2xl text-light_txt_Main dark:text-dark_txt_Main">
           Top Artist
         </h2>
         <Navigation />
@@ -45,13 +45,13 @@ export default function TopArtists() {
         thumbSize={150}
         renderThumbVertical={({ style, ...props }) => (
           <div
-            className=" rounded-md bg-indigo-500 hover:bg-indigo-600 dark:bg-gray-400 dark:hover:bg-gray-500"
+            className="rounded-md bg-indigo-500 hover:bg-indigo-600 dark:bg-gray-400 dark:hover:bg-gray-500"
             style={{ ...style }}
             {...props}
           />
         )}
       >
-        <div className=" grid h-full w-full grid-cols-2 justify-center justify-items-center  md:grid-cols-3 ">
+        <div className="grid h-full w-full grid-cols-2 justify-center justify-items-center md:grid-cols-3">
           {data?.tracks?.map((artist, i) => (
             <Link key={i} to={`/artists/${artist?.artists?.[0].adamid}`}>
               <div

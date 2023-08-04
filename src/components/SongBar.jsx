@@ -12,9 +12,9 @@ export default function SongBar({
   isFetching,
 }) {
   return (
-    <div className="mt-3 flex w-full items-center justify-evenly ">
+    <div className="mt-3 flex w-full items-center justify-evenly">
       <h3 className="mr-2 text-base font-bold text-light_txt_Main dark:text-dark_txt_Main">
-        {i + 1} .
+        {i + 1}.
       </h3>
       <div className="flex flex-1 flex-row items-center justify-between">
         {isFetching ? (
@@ -34,14 +34,14 @@ export default function SongBar({
           {isFetching ? (
             <div className="h-6 w-4/6 animate-pulse bg-slate-700"></div>
           ) : (
-            <p className="  w-4/6 truncate font-serif  text-base font-bold text-light_txt_Main dark:text-dark_txt_Main">
+            <p className="w-4/6 truncate font-serif text-base font-bold text-light_txt_Main dark:text-dark_txt_Main">
               {song?.attributes?.name}
             </p>
           )}
           {isFetching ? (
             <div className="mt-1 h-6 w-2/6 animate-pulse bg-slate-700"></div>
           ) : (
-            <p className="mt-1 truncate font-Lobster text-sm tracking-wide  text-light_txt_Main dark:text-amber-700">
+            <p className="mt-1 truncate font-Lobster text-sm tracking-wide text-light_txt_Main dark:text-amber-700">
               {artistId ? song?.attributes?.albumName : song?.subtitle}
             </p>
           )}

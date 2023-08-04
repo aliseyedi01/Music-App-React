@@ -30,7 +30,7 @@ export default function ArtistDetail() {
   };
 
   return (
-    <div className="hide-scrollbar relative  flex h-full w-full flex-col overflow-y-scroll  bg-light_bg_Main py-3 text-red-300 dark:bg-dark_bg_Main">
+    <div className="hide-scrollbar relative flex h-full w-full flex-col overflow-y-scroll bg-light_bg_Main py-3 text-red-300 dark:bg-dark_bg_Main">
       <div className="absolute right-2 top-3">
         <Navigation />
       </div>
@@ -68,7 +68,7 @@ export default function ArtistDetail() {
           1991 and raised on the southern coast of Nigeria before moving to London for college.
         </h2>
       </div>
-      <div className="hide-scrollbar ml-2 h-full w-full overflow-y-scroll  scroll-smooth ">
+      <div className="hide-scrollbar ml-2 h-full w-full overflow-y-scroll scroll-smooth ">
         <RelatedSong
           artistId={artistsId}
           data={artistSong?.data}

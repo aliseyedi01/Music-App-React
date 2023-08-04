@@ -20,7 +20,7 @@ export default function Track({ activeSong }) {
             ? activeSong?.attributes?.name
             : activeSong?.title || "No active Song"}
         </p>
-        <p className="truncate text-center  font-Ubuntu  text-sm capitalize text-light_txt_Main dark:text-dark_txt_Main">
+        <p className="truncate text-center font-Ubuntu text-sm capitalize text-light_txt_Main dark:text-dark_txt_Main">
           {activeSong.type === "songs"
             ? activeSong?.attributes?.albumName
             : activeSong?.subtitle || "No active Song"}

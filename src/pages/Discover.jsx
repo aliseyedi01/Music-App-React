@@ -18,7 +18,7 @@ export default function Discover() {
   } = useGetSongsByGenreQuery(genreTitle);
 
   return (
-    <div className=" h-full w-full   bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
+    <div className="h-full w-full bg-light_bg_Main py-3 dark:bg-dark_bg_Main">
       <SelectGenre
         dataListGenre={dataListGenre}
         genreTitle={genreTitle}
@@ -33,13 +33,13 @@ export default function Discover() {
         thumbSize={150}
         renderThumbVertical={({ style, ...props }) => (
           <div
-            className=" rounded-md bg-indigo-500 hover:bg-indigo-600 dark:bg-gray-400 dark:hover:bg-gray-500"
+            className="rounded-md bg-indigo-500 hover:bg-indigo-600 dark:bg-gray-400 dark:hover:bg-gray-500"
             style={{ ...style }}
             {...props}
           />
         )}
       >
-        <div className=" grid  grid-cols-2 place-items-center gap-4 p-2 md:grid-cols-3 md:gap-8 ">
+        <div className="grid grid-cols-2 place-items-center gap-4 p-2 md:grid-cols-3 md:gap-8">
           {dataGenre?.tracks.map((song, i) => (
             <SongCard
               key={song.key}

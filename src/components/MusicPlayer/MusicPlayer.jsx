@@ -58,7 +58,7 @@ export default function MusicPlayer() {
       {isMobile && (
         <div className="h-max w-full py-1  text-red-400 backdrop-blur-3xl">
           <div className="mx-3 flex flex-row items-center justify-between ">
-            <div className="">
+            <div>
               <Track activeSong={activeSong} />
             </div>
             <div className="w-4/5">
