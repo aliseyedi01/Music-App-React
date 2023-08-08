@@ -44,7 +44,6 @@ const playerSlice = createSlice({
       } else {
         state.activeSong = state.currentSongs[action.payload];
       }
-
       state.currentIndex = action.payload;
       state.isActive = true;
     },
@@ -56,5 +55,4 @@ const playerSlice = createSlice({
 });
 
 export const { setActiveSong, nextSong, prevSong, playPause } = playerSlice.actions;
-
 export default playerSlice.reducer;

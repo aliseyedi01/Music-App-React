@@ -1,13 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const apiKey = process.env.REACT_APP_API_KEY;
-console.log(apiKey);
 
 export const shazamApi = createApi({
   reducerPath: "shazamApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://shazam.p.rapidapi.com/",
     prepareHeaders: (headers) => {
-      headers.set("X-RapidAPI-Key", apiKey);
+      headers.set("X-RapidAPI-Key", process.env.REACT_APP_API_KEY);
       return headers;
     },
   }),
@@ -25,7 +23,6 @@ export const shazamApi = createApi({
       query: ({ songid }) => `songs/get-details?key=${songid}`,
     }),
     getSongRelated: builder.query({
-      // query: ({ songid }) => `songs/list-recommendations?key=${songid}`,
       query: () => "songs/list-recommendations?key=484129036&locale=en-US",
     }),
     getArtistDetails: builder.query({
